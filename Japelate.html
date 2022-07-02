@@ -1,0 +1,133 @@
+<Html>    
+  <Head>
+  
+  <!--
+  @author: Anthony Caudill (https://github.com/tcaudilllg ; wanzer@protonmail.com)
+  @license: MIT
+  @dependencies: JQuery
+  --->
+  
+    <style>
+    .theader {
+        color: white;
+        background-color: blue;
+        border: 1px solid white;
+        font-family: Verdana;
+        transform: rotate(-90deg);     
+    }
+    td {
+        transform: rotate(-90deg);
+        cursor: pointer;
+    }
+    
+    
+    </style>
+     
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+    
+    intext = "";
+    
+    $(document).ready( function() {
+    
+        $("td").not(".theader").click((e) => {
+            JapBox.value += e.currentTarget.innerText;
+        });
+    
+    });
+    </script>
+    
+    <Title>    
+    Japenter
+    </Title> 
+  </Head> 
+  <Body>  
+
+<input id="ClearBtn" type="button" value="Clear" onclick="JapBox.value = ''">
+<input id="JapBox" type="text" size=32>
+
+<br><br>
+
+<div style="width: 98%; height: 75%; overflow: scroll; font-family: MS Gothic">
+    <table id="kanatable" cellpadding=16 cellspacing=1 style="transform: rotate(90deg);">
+    <tr><td class="theader">X</td>
+        <td>メ</td>
+    </tr>
+    <tr><td class="theader">U</td>
+        <td>リ</td>
+    </tr>
+    <tr><td class="theader">T</td>
+        <td>イ</td>
+        <td>オ</td>
+        <td>キ</td>
+        <td>ケ</td>
+        <td>チ</td>
+        <td>テ</td>
+        <td>ナ</td>
+        <td>ホ</td>
+        <td>モ</td>
+    </tr>
+    <tr><td class="theader">P</td>
+        <td>ア</td>
+        <td>セ</td>
+        <td>ヤ</td>     
+    </tr>
+    <tr><td class="theader">L</td>
+        <td>レ</td>
+    </tr>
+    <tr><td class="theader">K</td>
+        <td>ヒ</td>
+    </tr>
+    <tr><td class="theader">I</td>
+        <td>エ</td>
+    </tr>
+    <tr><td class="theader">H</td>
+        <td>カ</td>
+        <td>ト</td>
+        <td>ル</td>     
+    </tr>
+    <tr><td class="theader">D</td>
+        <td>ロ</td>
+    </tr>
+    <tr><td class="theader">C</td>
+        <td>コ</td>
+    </tr>
+    <tr><td class="theader">A</td>
+        <td>ム</td>
+    </tr>
+    <tr><td class="theader">7</td>
+        <td>ウ</td>
+        <td>ク</td>
+        <td>サ</td>
+        <td>ス</td>
+        <td>タ</td>
+        <td>ヌ</td>
+        <td>ネ</td>
+        <td>フ</td>
+        <td>マ</td>
+        <td>ラ</td>
+        <td>ワ</td>
+        <td>ヲ</td>
+        <td>ヱ</td>
+        <td>ユ</td>
+    </tr>
+    <tr><td class="theader">3</td>
+        <td>ミ</td>
+        <td>ヨ</td>
+    </tr>
+    <tr><td class="theader">:)</td>
+        <td>シ</td>
+        <td>ソ</td>
+        <td>ン</td>
+        <td>ツ</td>
+        <td>ノ</td>
+        <td>ニ</td>
+        <td>ハ</td>
+        <td>ヘ</td>        
+    </tr>                                                             
+    </table>
+</div>
+
+<iframe src="https://www.google.com/search?igu=1&q=translate" width="100%" height="25%"></iframe>
+
