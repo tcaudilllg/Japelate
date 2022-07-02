@@ -7,6 +7,10 @@
   @dependencies: JQuery
   --->
   
+    <!-- styles -->
+  
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">  
+  
     <style>
     .theader {
         color: white;
@@ -22,34 +26,62 @@
     
     
     </style>
+    
+    <!-- scripts -->
      
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>    
     
     <script>
-    
-    intext = "";
-    
+     
     $(document).ready( function() {
     
+        // click event for tabs
+        
+        $( "#TabsContainer" ).tabs();
+    
+        // click event for kana and hiragana
         $("td").not(".theader").click((e) => {
             JapBox.value += e.currentTarget.innerText;
         });
+        
+        // click event for kanji
+        $(".extiw").click(function (e) {
+            
+            e.preventDefault();  // ignore the link
+            JapBox.value += e.currentTarget.innerText;
+            return false;
+        });
     
     });
+    
+    
     </script>
     
     <Title>    
-    Japenter
+    Japelate
     </Title> 
   </Head> 
   <Body>  
 
 <input id="ClearBtn" type="button" value="Clear" onclick="JapBox.value = ''">
-<input id="JapBox" type="text" size=32>
+<input id="JapBox" type="text" size=60>
+<button id="TextSelectBtn" onclick="JapBox.select()">Select for copy</button>
+
+(Right-click or Ctrl + C to copy)
 
 <br><br>
 
-<div style="width: 98%; height: 75%; overflow: scroll; font-family: MS Gothic">
+<div id="TabsContainer">
+<!-- tabs -->
+
+    <ul>
+        <li><a href="#KanaPanel">Kana</a></li>
+        <li><a href="#KanjiConceptsPanel">Kanji by context</a></li>
+    </ul>
+<!-- end tabs -->
+
+<div id="KanaPanel" class="navi" style="width: 98%; height: 75%; overflow: scroll; font-family: MS Gothic">
     <table id="kanatable" cellpadding=16 cellspacing=1 style="transform: rotate(90deg);">
     <tr><td class="theader">X</td>
         <td>メ</td>
@@ -127,7 +159,1269 @@
         <td>ヘ</td>        
     </tr>                                                             
     </table>
-</div>
+</div> <!-- end KanaPanel -->
+
+<div id="KanjiConceptsPanel" style="width: 98%; height: 75%; overflow: scroll;">
+
+<h2><span class="mw-headline" id="Physical_Attributes_and_Properties">Physical Attributes and Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=1" title="Edit section: Physical Attributes and Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span id="Colours_.28.E8.89.B2.29"></span><span class="mw-headline" id="Colours_(色)">Colours (<a href="https://en.wiktionary.org/wiki/%E8%89%B2" class="extiw" title="wikt:色">色</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=2" title="Edit section: Colours (色)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BB%92" class="extiw" title="wikt:黒">黒</a> black</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9D%92" class="extiw" title="wikt:青">青</a> blue</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%85" class="extiw" title="wikt:紅">紅</a> crimson</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A3%95" class="extiw" title="wikt:棕">棕</a> / <a href="https://en.wiktionary.org/wiki/%E8%A4%90" class="extiw" title="wikt:褐">褐</a> brown</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%BA" class="extiw" title="wikt:紺">紺</a> dark blue</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%91" class="extiw" title="wikt:金">金</a> gold</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B7%91" class="extiw" title="wikt:緑">緑</a> green</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%81%B0" class="extiw" title="wikt:灰">灰</a> grey</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%97%8D" class="extiw" title="wikt:藍">藍</a> indigo</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A9%99" class="extiw" title="wikt:橙">橙</a> orange</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B2%89" class="extiw" title="wikt:粉">粉</a> pink</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B5%A4" class="extiw" title="wikt:赤">赤</a> red</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B7%8B" class="extiw" title="wikt:緋">緋</a> scarlet</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8A%80" class="extiw" title="wikt:銀">銀</a> silver</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%B1" class="extiw" title="wikt:朱">朱</a> vermilion</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%AB" class="extiw" title="wikt:紫">紫</a> violet</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%99%BD" class="extiw" title="wikt:白">白</a> white</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BB%84" class="extiw" title="wikt:黄">黄</a> yellow</span>;  
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BD%A9" class="extiw" title="wikt:彩">彩</a> brightly coloured</span>.
+</p>
+<h3><span id="Form_and_Shape_.28.E5.BD.A2.29"></span><span class="mw-headline" id="Form_and_Shape_(形)">Form and Shape (<a href="https://en.wiktionary.org/wiki/%E5%BD%A2" class="extiw" title="wikt:形">形</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=3" title="Edit section: Form and Shape (形)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A7%92" class="extiw" title="wikt:角">角</a> angle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%A7" class="extiw" title="wikt:弧">弧</a> arc;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8E%89" class="extiw" title="wikt:玉">玉</a> ball;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%A0" class="extiw" title="wikt:枠">枠</a> border, frame;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A2%83" class="extiw" title="wikt:境">境</a> boundary;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%86" class="extiw" title="wikt:円">円</a> circle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%B8" class="extiw" title="wikt:丸">丸</a> circular;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%87%B9" class="extiw" title="wikt:凹">凹</a> concave;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%87%B8" class="extiw" title="wikt:凸">凸</a> convex;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9A%85" class="extiw" title="wikt:隅">隅</a> corner;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%B2" class="extiw" title="wikt:曲">曲</a> curve;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9F%84" class="extiw" title="wikt:柄">柄</a> design, pattern;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%9C" class="extiw" title="wikt:斜">斜</a> diagonal;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B8%81" class="extiw" title="wikt:縁">縁</a> / <a href="https://en.wiktionary.org/wiki/%E7%AB%AF" class="extiw" title="wikt:端">端</a> edge or border;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AB%AF" class="extiw" title="wikt:端">端</a> end, tip;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A7%BF" class="extiw" title="wikt:姿">姿</a> figure;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%A8" class="extiw" title="wikt:巨">巨</a> huge;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%A7" class="extiw" title="wikt:大">大</a> large;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B7%9A" class="extiw" title="wikt:線">線</a> line;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%97" class="extiw" title="wikt:列">列</a> line, row;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%A6" class="extiw" title="wikt:並">並</a> line up;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%95%B7" class="extiw" title="wikt:長">長</a> long;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%AE" class="extiw" title="wikt:微">微</a> minute;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8B%AD" class="extiw" title="wikt:狭">狭</a> narrow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A8%A1" class="extiw" title="wikt:模">模</a> pattern;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%91%A8" class="extiw" title="wikt:周">周</a> perimeter;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%92%B0" class="extiw" title="wikt:環">環</a> / <a href="https://en.wiktionary.org/wiki/%E8%BC%AA" class="extiw" title="wikt:輪">輪</a> ring, surround;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9F%AD" class="extiw" title="wikt:短">短</a> short;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%81%B4" class="extiw" title="wikt:側">側</a> side;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%8F" class="extiw" title="wikt:小">小</a> small;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%90%83" class="extiw" title="wikt:球">球</a> / <a href="https://en.wiktionary.org/wiki/%E5%9C%8F" class="extiw" title="wikt:圏">圏</a> sphere;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AB%98" class="extiw" title="wikt:高">高</a> tall;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%83" class="extiw" title="wikt:広">広</a> wide;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%85" class="extiw" title="wikt:幅">幅</a> width</span>
+</p>
+<h3><span class="mw-headline" id="Miscellaneous_properties">Miscellaneous properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=4" title="Edit section: Miscellaneous properties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B5%84" class="extiw" title="wikt:浄">浄</a> clean</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%B7" class="extiw" title="wikt:冷">冷</a> / <a href="https://en.wiktionary.org/wiki/%E5%AF%92" class="extiw" title="wikt:寒">寒</a> cold</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BF%83" class="extiw" title="wikt:濃">濃</a> concentrated</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B9%BF" class="extiw" title="wikt:湿">湿</a> damp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B7%B1" class="extiw" title="wikt:深">深</a> deep</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%AE" class="extiw" title="wikt:微">微</a> delicate</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%96%84" class="extiw" title="wikt:薄">薄</a> dilute or thin</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B1%9A" class="extiw" title="wikt:汚">汚</a> dirty</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%B2" class="extiw" title="wikt:干">干</a> / <a href="https://en.wiktionary.org/wiki/%E4%B9%BE" class="extiw" title="wikt:乾">乾</a> dry</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%AA" class="extiw" title="wikt:太">太</a> fat or thick</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B7%BB" class="extiw" title="wikt:緻">緻</a> fine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9B%BA" class="extiw" title="wikt:固">固</a> firm or solid</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%89%B6" class="extiw" title="wikt:艶">艶</a> glossy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%8D" class="extiw" title="wikt:重">重</a> heavy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A1%AC" class="extiw" title="wikt:硬">硬</a> hard</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%91" class="extiw" title="wikt:暑">暑</a> / <a href="https://en.wiktionary.org/wiki/%E7%86%B1" class="extiw" title="wikt:熱">熱</a> hot</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BB%BD" class="extiw" title="wikt:軽">軽</a> light (weight)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B6%B2" class="extiw" title="wikt:液">液</a> liquid</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BD%A4" class="extiw" title="wikt:潤">潤</a> moist</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B5%85" class="extiw" title="wikt:浅">浅</a> shallow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8B%AD" class="extiw" title="wikt:鋭">鋭</a> sharp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%B0" class="extiw" title="wikt:細">細</a> slender</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BB%9F" class="extiw" title="wikt:軟">軟</a> soft</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B2%98" class="extiw" title="wikt:粘">粘</a> sticky</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%B7" class="extiw" title="wikt:強">強</a> strong</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8E%9A" class="extiw" title="wikt:厚">厚</a> thick</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B8%A9" class="extiw" title="wikt:温">温</a> / <a href="https://en.wiktionary.org/wiki/%E6%9A%96" class="extiw" title="wikt:暖">暖</a> warm</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%B1" class="extiw" title="wikt:弱">弱</a> weak</span>.
+</p>
+<h3><span id="Directions_.28.E6.96.B9.29_and_Spatial_Relationships"></span><span class="mw-headline" id="Directions_(方)_and_Spatial_Relationships">Directions (<a href="https://en.wiktionary.org/wiki/%E6%96%B9" class="extiw" title="wikt:方">方</a>) and Spatial Relationships</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=5" title="Edit section: Directions (方) and Spatial Relationships">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%AE" class="extiw" title="wikt:央">央</a> Centre</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%B1" class="extiw" title="wikt:東">東</a> East</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%97" class="extiw" title="wikt:北">北</a> North</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%97" class="extiw" title="wikt:南">南</a> South</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A5%BF" class="extiw" title="wikt:西">西</a> West</span>;
+<br />
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%8C" class="extiw" title="wikt:後">後</a> back</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%96%93" class="extiw" title="wikt:間">間</a> between</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%95" class="extiw" title="wikt:底">底</a> bottom</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%81%A0" class="extiw" title="wikt:遠">遠</a> distant</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%8B" class="extiw" title="wikt:下">下</a> down</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%89%8D" class="extiw" title="wikt:前">前</a> front</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%A5" class="extiw" title="wikt:入">入</a> in</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%85" class="extiw" title="wikt:内">内</a> inside</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A5%A5" class="extiw" title="wikt:奥">奥</a> interior</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%A6" class="extiw" title="wikt:左">左</a> left</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%AD" class="extiw" title="wikt:中">中</a> middle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BF%91" class="extiw" title="wikt:近">近</a> near</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%87%BA" class="extiw" title="wikt:出">出</a> out</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%96" class="extiw" title="wikt:外">外</a> outside</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A3%8F" class="extiw" title="wikt:裏">裏</a> rear</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%B3" class="extiw" title="wikt:右">右</a> right</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%90%91" class="extiw" title="wikt:向">向</a> toward</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%8A" class="extiw" title="wikt:上">上</a> up</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B5%A9" class="extiw" title="wikt:浩">浩</a> vast</span>.
+</p>
+<h3><span class="mw-headline" id="Movement">Movement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=6" title="Edit section: Movement">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%A5" class="extiw" title="wikt:来">来</a> to come</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A6%BB" class="extiw" title="wikt:离">离</a> to depart or to leave</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9C%9C" class="extiw" title="wikt:圜">圜</a> to encircle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%90%BD" class="extiw" title="wikt:落">落</a> / <a href="https://en.wiktionary.org/wiki/%E5%A2%9C" class="extiw" title="wikt:墜">墜</a> to fall</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A1%8C" class="extiw" title="wikt:行">行</a> to go or to perform</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%80" class="extiw" title="wikt:往">往</a> to go to</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B6%8A" class="extiw" title="wikt:越">越</a> to pass or go beyond</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%8F%9A" class="extiw" title="wikt:揚">揚</a> to raise</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B8%B0" class="extiw" title="wikt:帰">帰</a> to return</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%80%92" class="extiw" title="wikt:倒">倒</a> to reverse</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%90%AC" class="extiw" title="wikt:搬">搬</a> to transport</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%85" class="extiw" title="wikt:旅">旅</a> to travel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B5%B4" class="extiw" title="wikt:赴">赴</a> to visit</span>;
+</p>
+<h3><span id="Numbers_.28.E6.95.B0.29"></span><span class="mw-headline" id="Numbers_(数)">Numbers (<a href="https://en.wiktionary.org/wiki/%E6%95%B0" class="extiw" title="wikt:数">数</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=7" title="Edit section: Numbers (数)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%B6" class="extiw" title="wikt:零">零</a> 0</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%80" class="extiw" title="wikt:一">一</a> 1</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BA%8C" class="extiw" title="wikt:二">二</a> 2</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%89" class="extiw" title="wikt:三">三</a> 3</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9B%9B" class="extiw" title="wikt:四">四</a> 4</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BA%94" class="extiw" title="wikt:五">五</a> 5</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%AD" class="extiw" title="wikt:六">六</a> 6</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%83" class="extiw" title="wikt:七">七</a> 7</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%AB" class="extiw" title="wikt:八">八</a> 8</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B9%9D" class="extiw" title="wikt:九">九</a> 9</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%81" class="extiw" title="wikt:十">十</a> 10</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%99%BE" class="extiw" title="wikt:百">百</a> 100</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%83" class="extiw" title="wikt:千">千</a> 1,000</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%87" class="extiw" title="wikt:万">万</a> 10,000</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%84%84" class="extiw" title="wikt:億">億</a> 100,000,000</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%86" class="extiw" title="wikt:兆">兆</a> 1,000,000,000,000</span>.
+</p>
+<h3><span id="Calculations_.28.E7.AE.97.29"></span><span class="mw-headline" id="Calculations_(算)">Calculations (<a href="https://en.wiktionary.org/wiki/%E7%AE%97" class="extiw" title="wikt:算">算</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=8" title="Edit section: Calculations (算)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8A%A0" class="extiw" title="wikt:加">加</a> to add</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%80%97" class="extiw" title="wikt:耗">耗</a> to consume</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B8%9B" class="extiw" title="wikt:減">減</a> to decrease, to subtract</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%86" class="extiw" title="wikt:分">分</a> / <a href="https://en.wiktionary.org/wiki/%E9%99%A4" class="extiw" title="wikt:除">除</a> to divide</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%80%8D" class="extiw" title="wikt:倍">倍</a> to double, times</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%89%96" class="extiw" title="wikt:剖">剖</a> to halve, split in two</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A2%97" class="extiw" title="wikt:増">増</a> / <a href="https://en.wiktionary.org/wiki/%E6%AE%96" class="extiw" title="wikt:殖">殖</a> to increase</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B9%98" class="extiw" title="wikt:乘">乘</a> to multiply</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B8%AE" class="extiw" title="wikt:縮">縮</a> to reduce, shrink</span>.
+</p>
+<h3><span id="Counters_.28.E5.80.8B.29"></span><span class="mw-headline" id="Counters_(個)">Counters (<a href="https://en.wiktionary.org/wiki/%E5%80%8B" class="extiw" title="wikt:個">個</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=9" title="Edit section: Counters (個)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%B9" class="extiw" title="wikt:匹">匹</a> counter for animals</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BE%BD" class="extiw" title="wikt:羽">羽</a> counter for animals, birds and rabbits</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A0%AD" class="extiw" title="wikt:頭">頭</a> counter for animals, large</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%96%8B" class="extiw" title="wikt:疋">疋</a> counter for animals, small or insects</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%80%8B" class="extiw" title="wikt:個">個</a> counter for articles</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%AD" class="extiw" title="wikt:札">札</a> counter for bonds or tickets</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%8A" class="extiw" title="wikt:冊">冊</a> counter for books</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%A4" class="extiw" title="wikt:斤">斤</a> counter for bread, loaves</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%AF" class="extiw" title="wikt:杯">杯</a> counter for cupfuls</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%AC" class="extiw" title="wikt:本">本</a> counter for cylindrical things</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%9A" class="extiw" title="wikt:枚">枚</a> counter for flat things</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BC%AA" class="extiw" title="wikt:輪">輪</a> counter for flowers or wheels</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B6%B3" class="extiw" title="wikt:足">足</a> counter for footwear, pairs</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BB%92" class="extiw" title="wikt:軒">軒</a> / <a href="https://en.wiktionary.org/wiki/%E6%88%B8" class="extiw" title="wikt:戸">戸</a> counter for houses</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%B0" class="extiw" title="wikt:台">台</a> counter for machines and vehicles</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BA%BA" class="extiw" title="wikt:人">人</a> counter for people</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9A%BB" class="extiw" title="wikt:隻">隻</a> counter for ships</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%B3" class="extiw" title="wikt:畳">畳</a> counter for tatami mats</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9F%BA" class="extiw" title="wikt:基">基</a> counter for stable structures</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%81" class="extiw" title="wikt:丁">丁</a> miscellaneous counter</span>.
+</p>
+<h3><span id="Counting_.28.E8.A8.88.29_.26_Sequence_.28.E5.BA.8F.29"></span><span class="mw-headline" id="Counting_(計)_&amp;_Sequence_(序)">Counting (<a href="https://en.wiktionary.org/wiki/%E8%A8%88" class="extiw" title="wikt:計">計</a>) &amp; Sequence (<a href="https://en.wiktionary.org/wiki/%E5%BA%8F" class="extiw" title="wikt:序">序</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=10" title="Edit section: Counting (計) &amp; Sequence (序)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%AA" class="extiw" title="wikt:番">番</a> numerical order</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%9D" class="extiw" title="wikt:初">初</a> first</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B9%99" class="extiw" title="wikt:乙">乙</a> second</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%99" class="extiw" title="wikt:丙">丙</a> third</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AC%AC" class="extiw" title="wikt:第">第</a> ordinal marker</span>.
+<br />
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%A1" class="extiw" title="wikt:両">両</a> both</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%81" class="extiw" title="wikt:桁">桁</a> digit</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%90%84" class="extiw" title="wikt:各">各</a> each</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AF%8E" class="extiw" title="wikt:毎">毎</a> every</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%91" class="extiw" title="wikt:少">少</a> few</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BF%8C" class="extiw" title="wikt:翌">翌</a> the following</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%8A" class="extiw" title="wikt:半">半</a> half</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%9A" class="extiw" title="wikt:多">多</a> many</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AC%A1" class="extiw" title="wikt:次">次</a> next</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%8C" class="extiw" title="wikt:双">双</a> pair</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A0%86" class="extiw" title="wikt:順">順</a> sequence</span>.
+</p>
+<h3><span id="Units_of_Measurement_.28.E6.B8.AC.29"></span><span class="mw-headline" id="Units_of_Measurement_(測)">Units of Measurement (<a href="https://en.wiktionary.org/wiki/%E6%B8%AC" class="extiw" title="wikt:測">測</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=11" title="Edit section: Units of Measurement (測)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Units of Area:</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9D%AA" class="extiw" title="wikt:坪">坪</a> two-mat area (around 3.3 m²)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%9D" class="extiw" title="wikt:畝">畝</a> 30 tsubo (99&#160;m<sup>2</sup>)</span>.
+<br />
+<b>Units of Length:</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%BA" class="extiw" title="wikt:尺">尺</a> Japanese foot (around 30 cm)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%B8" class="extiw" title="wikt:寸">寸</a> 1/10 Japanese foot (around 3 cm)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8E%98" class="extiw" title="wikt:厘">厘</a> (around 0.3 mm)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%8C" class="extiw" title="wikt:里">里</a> league (around 3.9 km)</span>.
+<br />
+<b>Units of Volume:</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8B%BA" class="extiw" title="wikt:勺">勺</a> ladle (around 18 ml)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%87" class="extiw" title="wikt:升">升</a> (around 1.8 L)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%97" class="extiw" title="wikt:斗">斗</a> (around 18 L)</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9F%B3" class="extiw" title="wikt:石">石</a> (around 180 L)</span>.
+<br />
+<b>Units of Weight:</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%81" class="extiw" title="wikt:匁">匁</a> (around 3.75 grams);</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%A4" class="extiw" title="wikt:斤">斤</a> (around 600 g)</span>
+</p>
+<h3><span id="Time_.28.E6.99.82.29"></span><span class="mw-headline" id="Time_(時)">Time (<a href="https://en.wiktionary.org/wiki/%E6%99%82" class="extiw" title="wikt:時">時</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=12" title="Edit section: Time (時)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%8C" class="extiw" title="wikt:後">後</a> after;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%88" class="extiw" title="wikt:先">先</a> ahead, previous;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%98%94" class="extiw" title="wikt:昔">昔</a> antiquity;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%89%8D" class="extiw" title="wikt:前">前</a> before;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A7%8B" class="extiw" title="wikt:始">始</a> begin;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%A9" class="extiw" title="wikt:早">早</a> early;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B5%82" class="extiw" title="wikt:終">終</a> end;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%80" class="extiw" title="wikt:紀">紀</a> era;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%B8" class="extiw" title="wikt:永">永</a> eternity;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%A7" class="extiw" title="wikt:旧">旧</a> former;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%BD" class="extiw" title="wikt:曽">曽</a> formerly;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%96%93" class="extiw" title="wikt:間">間</a> interval of time;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%81%85" class="extiw" title="wikt:遅">遅</a> late;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B9%85" class="extiw" title="wikt:久">久</a> long ago;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9A%9B" class="extiw" title="wikt:際">際</a> moment, occasion;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%B0" class="extiw" title="wikt:新">新</a> new</span>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BB%8A" class="extiw" title="wikt:今">今</a> now;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9B%9E" class="extiw" title="wikt:回">回</a> / <a href="https://en.wiktionary.org/wiki/%E5%BA%A6" class="extiw" title="wikt:度">度</a> number of times;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%A4" class="extiw" title="wikt:古">古</a> / <a href="https://en.wiktionary.org/wiki/%E8%80%81" class="extiw" title="wikt:老">老</a> old;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%98%A8" class="extiw" title="wikt:昨">昨</a> previous time;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BF%91" class="extiw" title="wikt:近">近</a> recent;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A0%83" class="extiw" title="wikt:頃">頃</a> time, about;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%9F" class="extiw" title="wikt:期">期</a> time period;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%AB" class="extiw" title="wikt:暫">暫</a> a while;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8B%A5" class="extiw" title="wikt:若">若</a> young;</span> 
+</p>
+<h3><span id="Days_of_the_Week_.28.E6.9B.9C.29"></span><span class="mw-headline" id="Days_of_the_Week_(曜)">Days of the Week (<a href="https://en.wiktionary.org/wiki/%E6%9B%9C" class="extiw" title="wikt:曜">曜</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=13" title="Edit section: Days of the Week (曜)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%A5" class="extiw" title="wikt:日">日</a> Sunday;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%88" class="extiw" title="wikt:月">月</a> Monday;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%81%AB" class="extiw" title="wikt:火">火</a> Tuesday;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%B4" class="extiw" title="wikt:水">水</a> Wednesday;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%A8" class="extiw" title="wikt:木">木</a> Thursday;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%91" class="extiw" title="wikt:金">金</a> Friday;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9C%9F" class="extiw" title="wikt:土">土</a> Saturday</span>
+</p>
+<h3><span class="mw-headline" id="Divisions_of_the_Day">Divisions of the Day</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=14" title="Edit section: Divisions of the Day">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%90%98" class="extiw" title="wikt:鐘">鐘</a> clock</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%98%BC" class="extiw" title="wikt:昼">昼</a> daytime</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%B5" class="extiw" title="wikt:宵">宵</a> early evening</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%95" class="extiw" title="wikt:夕">夕</a> / <a href="https://en.wiktionary.org/wiki/%E6%99%A9" class="extiw" title="wikt:晩">晩</a> evening</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%99%82" class="extiw" title="wikt:時">時</a> hour</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%86" class="extiw" title="wikt:分">分</a> minute</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%9D" class="extiw" title="wikt:朝">朝</a> morning</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%9C" class="extiw" title="wikt:夜">夜</a> night</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%88" class="extiw" title="wikt:午">午</a> noon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%AD" class="extiw" title="wikt:旭">旭</a> rising sun</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A7%92" class="extiw" title="wikt:秒">秒</a> second</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%81" class="extiw" title="wikt:暁">暁</a> / <a href="https://en.wiktionary.org/wiki/%E6%97%A6" class="extiw" title="wikt:旦">旦</a> sunrise</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%AE" class="extiw" title="wikt:暮">暮</a> sunset</span>.
+</p>
+<h3><span class="mw-headline" id="Divisions_of_the_Year">Divisions of the Year</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=15" title="Edit section: Divisions of the Year">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%A6" class="extiw" title="wikt:暦">暦</a> calendar;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%A5" class="extiw" title="wikt:日">日</a> day;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%9C" class="extiw" title="wikt:曜">曜</a> day of week;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%88" class="extiw" title="wikt:月">月</a> month;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%AC" class="extiw" title="wikt:旬">旬</a> period of 10 days;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%80%B1" class="extiw" title="wikt:週">週</a> week;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%B4" class="extiw" title="wikt:年">年</a> year;</span> 
+</p>
+<h3><span id="Seasons_.28.E5.AD.A3_.2F_.E5.80.99.29"></span><span class="mw-headline" id="Seasons_(季_/_候)">Seasons (<a href="https://en.wiktionary.org/wiki/%E5%AD%A3" class="extiw" title="wikt:季">季</a> / <a href="https://en.wiktionary.org/wiki/%E5%80%99" class="extiw" title="wikt:候">候</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=16" title="Edit section: Seasons (季 / 候)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AF%80" class="extiw" title="wikt:節">節</a> season, period;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%98%A5" class="extiw" title="wikt:春">春</a> Spring;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%8F" class="extiw" title="wikt:夏">夏</a> Summer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A7%8B" class="extiw" title="wikt:秋">秋</a> Autumn;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%AC" class="extiw" title="wikt:冬">冬</a> Winter</span>
+</p>
+<h2><span class="mw-headline" id="Nature">Nature</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=17" title="Edit section: Nature">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Sky">Sky</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=18" title="Edit section: Sky">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AC%83" class="extiw" title="wikt:欃">欃</a> comet</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A3%9F" class="extiw" title="wikt:食">食</a> eclipse</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%A9" class="extiw" title="wikt:天">天</a> heaven, sky</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%88" class="extiw" title="wikt:月">月</a> moon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%98%9F" class="extiw" title="wikt:星">星</a> star</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%97%A5" class="extiw" title="wikt:日">日</a> sun</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%87" class="extiw" title="wikt:宇">宇</a> universe</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A9%BA" class="extiw" title="wikt:空">空</a> void, sky</span>.
+</p>
+<h3><span class="mw-headline" id="Natural_Substances">Natural Substances</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=19" title="Edit section: Natural Substances">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Gas (<a href="https://en.wiktionary.org/wiki/%E6%B0%94" class="extiw" title="wikt:气">气</a>)</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%97" class="extiw" title="wikt:気">気</a> air</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AA%92" class="extiw" title="wikt:窒">窒</a> nitrogen</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%A7" class="extiw" title="wikt:氧">氧</a> oxygen</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B1%BD" class="extiw" title="wikt:汽">汽</a> steam or vapour</span>.
+<br /> <b>Liquid (<a href="https://en.wiktionary.org/wiki/%E6%B6%B2" class="extiw" title="wikt:液">液</a>)</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%B8" class="extiw" title="wikt:酸">酸</a> acid or vinegar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%84%82" class="extiw" title="wikt:脂">脂</a> fat or resin</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B2%B9" class="extiw" title="wikt:油">油</a> oil</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%B4" class="extiw" title="wikt:水">水</a> water</span>.
+<br /> <b>Solid (<a href="https://en.wiktionary.org/wiki/%E5%9B%BA" class="extiw" title="wikt:固">固</a>)</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%81%B0" class="extiw" title="wikt:灰">灰</a> ash</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%B9" class="extiw" title="wikt:丹">丹</a> cinnabar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%82%AD" class="extiw" title="wikt:炭">炭</a> coal</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8A%85" class="extiw" title="wikt:銅">銅</a> copper</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%99%B6" class="extiw" title="wikt:晶">晶</a> crystal</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9C%9F" class="extiw" title="wikt:土">土</a> earth</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9C%B0" class="extiw" title="wikt:地">地</a> ground</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%B7" class="extiw" title="wikt:氷">氷</a> ice</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%89%84" class="extiw" title="wikt:鉄">鉄</a> iron</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8E%89" class="extiw" title="wikt:玉">玉</a> jewel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%89%9B" class="extiw" title="wikt:鉛">鉛</a> lead</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%91" class="extiw" title="wikt:金">金</a> metal or gold</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B3%A5" class="extiw" title="wikt:泥">泥</a> mud</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%89%B1" class="extiw" title="wikt:鉱">鉱</a> ore</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8F%A0" class="extiw" title="wikt:珠">珠</a> pearl or jewel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8A%91" class="extiw" title="wikt:銑">銑</a> pig iron</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A1%A9" class="extiw" title="wikt:塩">塩</a> salt</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A0%82" class="extiw" title="wikt:砂">砂</a> / <a href="https://en.wiktionary.org/wiki/%E6%B2%99" class="extiw" title="wikt:沙">沙</a> sand</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8A%80" class="extiw" title="wikt:銀">銀</a> silver</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8B%BC" class="extiw" title="wikt:鋼">鋼</a> steel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9F%B3" class="extiw" title="wikt:石">石</a> stone</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A1%AB" class="extiw" title="wikt:硫">硫</a> sulphur</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%90" class="extiw" title="wikt:材">材</a> timber or material</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8C%AB" class="extiw" title="wikt:錫">錫</a> tin</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8B%85" class="extiw" title="wikt:鋅">鋅</a> zinc</span>.
+</p>
+<h3><span class="mw-headline" id="Weather">Weather</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=20" title="Edit section: Weather">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%99%B4" class="extiw" title="wikt:晴">晴</a> clear or fine weather</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%80%99" class="extiw" title="wikt:候">候</a> climate</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%B2" class="extiw" title="wikt:雲">雲</a> cloud</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%87" class="extiw" title="wikt:曇">曇</a> cloudy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%B7" class="extiw" title="wikt:冷">冷</a> cold</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9C%A7" class="extiw" title="wikt:霧">霧</a> fog</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9C%9E" class="extiw" title="wikt:霞">霞</a> haze</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9C%9C" class="extiw" title="wikt:霜">霜</a> frost</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%B9" class="extiw" title="wikt:雹">雹</a> hail</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%86%B1" class="extiw" title="wikt:熱">熱</a> heat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%96%83" class="extiw" title="wikt:閃">閃</a> lightning</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9D%84" class="extiw" title="wikt:靄">靄</a> mist</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%81%BD" class="extiw" title="wikt:災">災</a> natural disaster</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%F0%A0%86%AD" class="extiw" title="wikt:𠆭">𠆭</a> overcast</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%A8" class="extiw" title="wikt:雨">雨</a> rain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%99%B9" class="extiw" title="wikt:虹">虹</a> rainbow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%AA" class="extiw" title="wikt:雪">雪</a> snow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B5%90" class="extiw" title="wikt:嵐">嵐</a> storm</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%B7" class="extiw" title="wikt:雷">雷</a> thunder</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A2%A8" class="extiw" title="wikt:風">風</a> wind</span>.
+<br /><b>Other Natural Phenomena</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%82%8E" class="extiw" title="wikt:炎">炎</a> / <a href="https://en.wiktionary.org/wiki/%E7%84%B0" class="extiw" title="wikt:焰">焰</a> blaze or flame</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%97" class="extiw" title="wikt:暗">暗</a> / <a href="https://en.wiktionary.org/wiki/%E9%97%87" class="extiw" title="wikt:闇">闇</a> / <a href="https://en.wiktionary.org/wiki/%E5%86%A5" class="extiw" title="wikt:冥">冥</a> dark</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9C%B2" class="extiw" title="wikt:露">露</a> dew</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9C%87" class="extiw" title="wikt:震">震</a> earthquake</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%BB" class="extiw" title="wikt:電">電</a> electricity</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%81%AB" class="extiw" title="wikt:火">火</a> fire</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B4%AA" class="extiw" title="wikt:洪">洪</a> flood</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%85%99" class="extiw" title="wikt:煙">煙</a> fumes or smoke</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%89" class="extiw" title="wikt:光">光</a> / <a href="https://en.wiktionary.org/wiki/%E6%98%8E" class="extiw" title="wikt:明">明</a> light</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A3%81" class="extiw" title="wikt:磁">磁</a> magnet</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BD%B1" class="extiw" title="wikt:影">影</a> shadow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BD%AE" class="extiw" title="wikt:潮">潮</a> tide</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B3%A2" class="extiw" title="wikt:波">波</a> wave</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B8%A6" class="extiw" title="wikt:渦">渦</a> whirlpool</span>;
+</p>
+<h3><span id="Land_.28.E9.99.B8.29_and_Topography"></span><span class="mw-headline" id="Land_(陸)_and_Topography">Land (<a href="https://en.wiktionary.org/wiki/%E9%99%B8" class="extiw" title="wikt:陸">陸</a>) and Topography</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=21" title="Edit section: Land (陸) and Topography">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B2%A9" class="extiw" title="wikt:岩">岩</a> / <a href="https://en.wiktionary.org/wiki/%E5%B7%8C" class="extiw" title="wikt:巌">巌</a> boulder or rock</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AA%9F" class="extiw" title="wikt:窟">窟</a> cave</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B4%96" class="extiw" title="wikt:崖">崖</a> cliff</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%8C" class="extiw" title="wikt:里">里</a> countryside</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BC%A0" class="extiw" title="wikt:漠">漠</a> desert</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A0%80" class="extiw" title="wikt:堀">堀</a> ditch</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A0%A4" class="extiw" title="wikt:堤">堤</a> embankment</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A3%8C" class="extiw" title="wikt:壌">壌</a> fertile soil</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%8E" class="extiw" title="wikt:野">野</a> / <a href="https://en.wiktionary.org/wiki/%E7%95%91" class="extiw" title="wikt:畑">畑</a> / <a href="https://en.wiktionary.org/wiki/%E5%8E%9F" class="extiw" title="wikt:原">原</a> field</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BA%93" class="extiw" title="wikt:麓">麓</a> foot of mountain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B3%A1" class="extiw" title="wikt:峡">峡</a> gorge</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B2%AC" class="extiw" title="wikt:岬">岬</a> headland</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%98" class="extiw" title="wikt:丘">丘</a> / <a href="https://en.wiktionary.org/wiki/%E5%B2%A1" class="extiw" title="wikt:岡">岡</a> / <a href="https://en.wiktionary.org/wiki/%E9%98%9C" class="extiw" title="wikt:阜">阜</a> hill</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B1%B1" class="extiw" title="wikt:山">山</a> / <a href="https://en.wiktionary.org/wiki/%E5%B2%B3" class="extiw" title="wikt:岳">岳</a> / <a href="https://en.wiktionary.org/wiki/%E5%B3%B0" class="extiw" title="wikt:峰">峰</a> mountain or peak</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B3%A0" class="extiw" title="wikt:峠">峠</a> mountain pass</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BA%AA" class="extiw" title="wikt:溪">溪</a> mountain stream or valley</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%89%A7" class="extiw" title="wikt:牧">牧</a> pasture</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B8%93" class="extiw" title="wikt:渓">渓</a> ravine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%B0" class="extiw" title="wikt:田">田</a> rice paddy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9D%82" class="extiw" title="wikt:坂">坂</a> slope</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B0%B7" class="extiw" title="wikt:谷">谷</a> valley</span>.
+<br /><b><a href="/wiki/Coastal_geography" title="Coastal geography">Coastal Geography</a>:</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B9%BE" class="extiw" title="wikt:湾">湾</a> bay or gulf</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B5%9C" class="extiw" title="wikt:浜">浜</a> / <a href="https://en.wiktionary.org/wiki/%E6%B5%A6" class="extiw" title="wikt:浦">浦</a> beach</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B4%8E" class="extiw" title="wikt:崎">崎</a> / <a href="https://en.wiktionary.org/wiki/%E5%9F%BC" class="extiw" title="wikt:埼">埼</a> cape or promontory</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B2%96" class="extiw" title="wikt:沖">沖</a> high seas, offshore</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B3%B6" class="extiw" title="wikt:島">島</a> island</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BD%9F" class="extiw" title="wikt:潟">潟</a> lagoon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B4%8B" class="extiw" title="wikt:洋">洋</a> ocean</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%80%AC" class="extiw" title="wikt:瀬">瀬</a> rapids or shallows</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A4%81" class="extiw" title="wikt:礁">礁</a> reef</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B5%B7" class="extiw" title="wikt:海">海</a> sea</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A3%AF" class="extiw" title="wikt:磯">磯</a> seashore</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B2%B8" class="extiw" title="wikt:岸">岸</a> shore</span>.
+<br /><b><a href="/wiki/Limnology" title="Limnology">Limnology</a>:</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B1%9F" class="extiw" title="wikt:江">江</a> creek</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B9%96" class="extiw" title="wikt:湖">湖</a> lake</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%94" class="extiw" title="wikt:畔">畔</a> levee</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B2%BC" class="extiw" title="wikt:沼">沼</a> marsh</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B1%A0" class="extiw" title="wikt:池">池</a> pond</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%9D" class="extiw" title="wikt:川">川</a> river</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B2%B3" class="extiw" title="wikt:河">河</a> stream</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B2%A2" class="extiw" title="wikt:沢">沢</a> swamp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B3%89" class="extiw" title="wikt:泉">泉</a> water spring</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BB%9D" class="extiw" title="wikt:滝">滝</a> waterfall</span>.
+</p>
+<h3><span id="Animals_.28.E7.8D.A3.29"></span><span class="mw-headline" id="Animals_(獣)">Animals (<a href="https://en.wiktionary.org/wiki/%E7%8D%A3" class="extiw" title="wikt:獣">獣</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=22" title="Edit section: Animals (獣)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl><dd><i>See also Food and Drink</i></dd></dl>
+<p><b>Amphibians</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%99" class="extiw" title="wikt:蛙">蛙</a> frog</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A0%91" class="extiw" title="wikt:蠑">蠑</a> / <a href="https://en.wiktionary.org/wiki/%E9%AF%A2" class="extiw" title="wikt:鯢">鯢</a> salamander</span>.
+<br /> <b>Birds (<a href="https://en.wiktionary.org/wiki/%E9%B3%A5" class="extiw" title="wikt:鳥">鳥</a>)</b> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B6%8F" class="extiw" title="wikt:鶏">鶏</a> chicken</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B6%B4" class="extiw" title="wikt:鶴">鶴</a> crane</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%83%8F" class="extiw" title="wikt:烏">烏</a>/<a href="https://en.wiktionary.org/wiki/%E9%B4%89" class="extiw" title="wikt:鴉">鴉</a> crow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B3%A9" class="extiw" title="wikt:鳩">鳩</a> dove, pigeon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B4%A8" class="extiw" title="wikt:鴨">鴨</a> duck</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B7%B2" class="extiw" title="wikt:鷲">鷲</a> eagle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B7%BA" class="extiw" title="wikt:鷺">鷺</a> egret or heron</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B7%B9" class="extiw" title="wikt:鷹">鷹</a> hawk</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B6%AF" class="extiw" title="wikt:鶯">鶯</a> oriole, nightingale, warbler</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A2%9F" class="extiw" title="wikt:梟">梟</a> owl</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B6%89" class="extiw" title="wikt:鶉">鶉</a> quail</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B4%8E" class="extiw" title="wikt:鴎">鴎</a> seagull</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9B%80" class="extiw" title="wikt:雀">雀</a> sparrow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%87%95" class="extiw" title="wikt:燕">燕</a> swallow</span>.
+<br /> <b>Fish (<a href="https://en.wiktionary.org/wiki/%E9%AD%9A" class="extiw" title="wikt:魚">魚</a>); <i>et al.</i></b> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%A4" class="extiw" title="wikt:鰤">鰤</a> amberjack</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%8D" class="extiw" title="wikt:鰍">鰍</a> <a href="/wiki/Cottus_gobio" class="mw-redirect" title="Cottus gobio">bullhead</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%89" class="extiw" title="wikt:鯉">鯉</a> carp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%B0" class="extiw" title="wikt:鯰">鯰</a> catfish</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B1%88" class="extiw" title="wikt:鱈">鱈</a> cod</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AE%92" class="extiw" title="wikt:鮒">鮒</a> crucian carp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%BB" class="extiw" title="wikt:鰻">鰻</a> eel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%88" class="extiw" title="wikt:鰈">鰈</a>/<a href="https://en.wiktionary.org/wiki/%E9%AE%83" class="extiw" title="wikt:鮃">鮃</a> flounder</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%8A" class="extiw" title="wikt:鯊">鯊</a> goby</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%8A" class="extiw" title="wikt:鰊">鰊</a> herring</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%B5" class="extiw" title="wikt:鯵">鯵</a> <a href="/wiki/Trachurus_trachurus" class="mw-redirect" title="Trachurus trachurus">horse mackerel / scad</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%96" class="extiw" title="wikt:鯖">鯖</a> mackerel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AE%A0" class="extiw" title="wikt:鮠">鮠</a> minnow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%B8" class="extiw" title="wikt:蛸">蛸</a> octopus</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B1%B8" class="extiw" title="wikt:鱸">鱸</a> <a href="/wiki/Dicentrarchus_labrax" class="mw-redirect" title="Dicentrarchus labrax">sea bass</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%9B" class="extiw" title="wikt:鯛">鯛</a> sea bream</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AE%AD" class="extiw" title="wikt:鮭">鮭</a> salmon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AE%AB" class="extiw" title="wikt:鮫">鮫</a> shark</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%9D" class="extiw" title="wikt:貝">貝</a> shellfish</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AE%83" class="extiw" title="wikt:鮃">鮃</a> <a href="/wiki/Sole_(fish)" title="Sole (fish)">sole</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%AF" class="extiw" title="wikt:鰯">鰯</a> sardine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%8C" class="extiw" title="wikt:鰌">鰌</a> stone loach</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B1%92" class="extiw" title="wikt:鱒">鱒</a> trout</span>.
+<br /> <b>Insects (<a href="https://en.wiktionary.org/wiki/%E8%99%AB" class="extiw" title="wikt:虫">虫</a>/<a href="https://en.wiktionary.org/wiki/%E6%98%86" class="extiw" title="wikt:昆">昆</a>); <i>et al.</i></b> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9F%BB" class="extiw" title="wikt:蟻">蟻</a> ant</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9C%82" class="extiw" title="wikt:蜂">蜂</a> bee</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%A3" class="extiw" title="wikt:蛣">蛣</a> beetle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9D%B6" class="extiw" title="wikt:蝶">蝶</a> butterfly</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9E%97" class="extiw" title="wikt:螗">螗</a> / <a href="https://en.wiktionary.org/wiki/%E8%9D%89" class="extiw" title="wikt:蝉">蝉</a> cicada</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9C%BB" class="extiw" title="wikt:蜻">蜻</a> dragonfly</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%8D" class="extiw" title="wikt:蛍">蛍</a> firefly</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9E%B3" class="extiw" title="wikt:螳">螳</a> mantis</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9A%8A" class="extiw" title="wikt:蚊">蚊</a> mosquito</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%BE" class="extiw" title="wikt:蛾">蛾</a> moth</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9A%95" class="extiw" title="wikt:蚕">蚕</a> silkworm</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%86" class="extiw" title="wikt:蛆">蛆</a> worm/grub/maggot</span>.
+<br /><b>Mammals</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8D%BE" class="extiw" title="wikt:獾">獾</a> badger</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9D%A0" class="extiw" title="wikt:蝠">蝠</a> bat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%86%8A" class="extiw" title="wikt:熊">熊</a> bear</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8C%AB" class="extiw" title="wikt:猫">猫</a> cat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%89%9B" class="extiw" title="wikt:牛">牛</a> / </span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B9%BF" class="extiw" title="wikt:鹿">鹿</a> deer</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8A%AC" class="extiw" title="wikt:犬">犬</a> / <a href="https://en.wiktionary.org/wiki/%E7%8B%97" class="extiw" title="wikt:狗">狗</a> dog</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%86" class="extiw" title="wikt:鯆">鯆</a> dolphin</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B1%A1" class="extiw" title="wikt:象">象</a> elephant</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8B%90" class="extiw" title="wikt:狐">狐</a> fox</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A6%AC" class="extiw" title="wikt:馬">馬</a> horse</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B1%B9" class="extiw" title="wikt:豹">豹</a> leopard</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8D%85" class="extiw" title="wikt:獅">獅</a> lion</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%9C" class="extiw" title="wikt:畜">畜</a> livestock</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8C%BF" class="extiw" title="wikt:猿">猿</a> monkey</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BC%A0" class="extiw" title="wikt:鼠">鼠</a> mouse or rat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8D%BA" class="extiw" title="wikt:獺">獺</a> otter</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8C%A9" class="extiw" title="wikt:猩">猩</a> orangutan</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%8E" class="extiw" title="wikt:兎">兎</a> rabbit</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8A%80" class="extiw" title="wikt:犀">犀</a> rhinoceros</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B1%AC" class="extiw" title="wikt:豬">豬</a> / <a href="https://en.wiktionary.org/wiki/%E8%B1%9A" class="extiw" title="wikt:豚">豚</a> pig</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BE%8A" class="extiw" title="wikt:羊">羊</a> / <a href="https://en.wiktionary.org/wiki/%F0%A0%81%A5" class="extiw" title="wikt:𠁥">𠁥</a> sheep</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8B%B8" class="extiw" title="wikt:狸">狸</a> <a href="/wiki/Japanese_raccoon_dog" title="Japanese raccoon dog">tanuki</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%99%8E" class="extiw" title="wikt:虎">虎</a> tiger</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BC%AC" class="extiw" title="wikt:鼬">鼬</a> weasel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AF%A8" class="extiw" title="wikt:鯨">鯨</a> whale</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8B%BC" class="extiw" title="wikt:狼">狼</a> wolf</span>. 
+<br /> <b>Reptiles (<a href="https://en.wiktionary.org/wiki/%E8%9C%A5%E8%9C%B4" class="extiw" title="wikt:蜥蜴">蜥蜴</a>)</b> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%B0%90" class="extiw" title="wikt:鰐">鰐</a> alligator or crocodile</span>; 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BE%8D" class="extiw" title="wikt:龍">龍</a> / <a href="/w/index.php?title=Wikit:%E7%AB%9C&amp;action=edit&amp;redlink=1" class="new" title="Wikit:竜 (page does not exist)">竜</a> <a href="/wiki/Asian_dragon" class="mw-redirect" title="Asian dragon">dragon</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9B%87" class="extiw" title="wikt:蛇">蛇</a> snake</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BE%9C" class="extiw" title="wikt:龜">龜</a> / <a href="https://en.wiktionary.org/wiki/%E4%BA%80" class="extiw" title="wikt:亀">亀</a> turtle</span>.
+<br /> <i><b>Parts of Animals</b></i>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%88%AA" class="extiw" title="wikt:爪">爪</a> claw</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%89%99" class="extiw" title="wikt:牙">牙</a> fang, tusk</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BE%BD" class="extiw" title="wikt:羽">羽</a> feather</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AF%9B" class="extiw" title="wikt:毛">毛</a> fur</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A7%92" class="extiw" title="wikt:角">角</a> horn</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%BE" class="extiw" title="wikt:尾">尾</a> tail</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BF%BC" class="extiw" title="wikt:翼">翼</a> wing</span>.
+</p>
+<h3><span id="Plants_.28.E6.A4.8D.29_and_Trees_.28.E6.A8.B9.29"></span><span class="mw-headline" id="Plants_(植)_and_Trees_(樹)">Plants (<a href="https://en.wiktionary.org/wiki/%E6%A4%8D" class="extiw" title="wikt:植">植</a>) and Trees (<a href="https://en.wiktionary.org/wiki/%E6%A8%B9" class="extiw" title="wikt:樹">樹</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=23" title="Edit section: Plants (植) and Trees (樹)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl><dd><i>See also Food and Drink</i></dd></dl>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AB%B9" class="extiw" title="wikt:竹">竹</a> bamboo</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8C%A8" class="extiw" title="wikt:茨">茨</a> brier</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%89" class="extiw" title="wikt:杉">杉</a> cedar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%9C" class="extiw" title="wikt:桜">桜</a> cherry</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8F%8A" class="extiw" title="wikt:菊">菊</a> chrysanthemum</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%82" class="extiw" title="wikt:桂">桂</a> cinnamon tree</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A0%BD" class="extiw" title="wikt:栽">栽</a> the cultivation of plants</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BA%BB" class="extiw" title="wikt:麻">麻</a> flax or hemp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8A%B1" class="extiw" title="wikt:花">花</a> flower</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A3%AE" class="extiw" title="wikt:森">森</a> forest</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8D%89" class="extiw" title="wikt:草">草</a> grass</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%97" class="extiw" title="wikt:林">林</a> grove</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A0%83" class="extiw" title="wikt:栃">栃</a> horse chestnut</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%91" class="extiw" title="wikt:桑">桑</a> mulberry</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%83" class="extiw" title="wikt:桃">桃</a> peach</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A2%A8" class="extiw" title="wikt:梨">梨</a> pear</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9F%BF" class="extiw" title="wikt:柿">柿</a> persimmon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%BE" class="extiw" title="wikt:松">松</a> pine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A2%85" class="extiw" title="wikt:梅">梅</a> plum</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A8%B2" class="extiw" title="wikt:稲">稲</a> rice plant</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%9C" class="extiw" title="wikt:桜">桜</a> <a href="/wiki/Cherry_blossom" title="Cherry blossom">sakura</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%A8" class="extiw" title="wikt:木">木</a> wood</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%91%9B" class="extiw" title="wikt:葛">葛</a> vine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9F%B3" class="extiw" title="wikt:柳">柳</a> willow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%97%A4" class="extiw" title="wikt:藤">藤</a> wisteria</span>.
+<br /><b>Bacteria and Fungi (<a href="https://en.wiktionary.org/wiki/%E8%8F%8C" class="extiw" title="wikt:菌">菌</a>)</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%97%BB" class="extiw" title="wikt:藻">藻</a> algae or seaweed</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BB%B4" class="extiw" title="wikt:黴">黴</a> mold</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8C%B8" class="extiw" title="wikt:茸">茸</a> mushroom</span>.
+<br /> <i><b>Parts of Plants</b></i>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%9D" class="extiw" title="wikt:枝">枝</a> branch</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8A%BD" class="extiw" title="wikt:芽">芽</a> bud</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%91%89" class="extiw" title="wikt:葉">葉</a> leaf</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%93%A3" class="extiw" title="wikt:瓣">瓣</a> petal</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A0%B9" class="extiw" title="wikt:根">根</a> root</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8B%97" class="extiw" title="wikt:苗">苗</a> seedling</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8C%8E" class="extiw" title="wikt:茎">茎</a> stem</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%B9" class="extiw" title="wikt:幹">幹</a> tree trunk</span>.
+</p>
+<h2><span id="People_.28.E4.BA.BA.29"></span><span class="mw-headline" id="People_(人)">People (<a href="https://en.wiktionary.org/wiki/%E4%BA%BA" class="extiw" title="wikt:人">人</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=24" title="Edit section: People (人)">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="General">General</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=25" title="Edit section: General">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%80%85" class="extiw" title="wikt:者">者</a> person (usually with qualifier);</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%91" class="extiw" title="wikt:民">民</a> people;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A7%81" class="extiw" title="wikt:私">私</a> / <a href="https://en.wiktionary.org/wiki/%E5%83%95" class="extiw" title="wikt:僕">僕</a> / <a href="https://en.wiktionary.org/wiki/%E4%BF%BA" class="extiw" title="wikt:俺">俺</a> I or me;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%87%AA" class="extiw" title="wikt:自">自</a> oneself;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%B1" class="extiw" title="wikt:己">己</a> oneself;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%88%91" class="extiw" title="wikt:我">我</a> self, ego</span>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%90%9B" class="extiw" title="wikt:君">君</a> you;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AD%90" class="extiw" title="wikt:子">子</a> child;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%90" class="extiw" title="wikt:児">児</a> child;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AB%A5" class="extiw" title="wikt:童">童</a> juvenile;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%92" class="extiw" title="wikt:徒">徒</a> gang or junior;</span> 
+<br /><b>Male (<a href="https://en.wiktionary.org/wiki/%E9%9B%84" class="extiw" title="wikt:雄">雄</a>)</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BD%BC" class="extiw" title="wikt:彼">彼</a> he;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9D%8A" class="extiw" title="wikt:坊">坊</a> boy, sonny;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%83%8E" class="extiw" title="wikt:郎">郎</a> son, boy;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%B7" class="extiw" title="wikt:男">男</a> man;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BF%81" class="extiw" title="wikt:翁">翁</a> old man;</span> 
+<br /><b>Female (<a href="https://en.wiktionary.org/wiki/%E9%9B%8C" class="extiw" title="wikt:雌">雌</a>)</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AC%A2" class="extiw" title="wikt:嬢">嬢</a> young lady;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A5%B3" class="extiw" title="wikt:女">女</a> woman;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A9%86" class="extiw" title="wikt:婆">婆</a> old woman;</span>
+</p>
+<h3><span class="mw-headline" id="Roles_and_status">Roles and status</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=26" title="Edit section: Roles and status">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%BB" class="extiw" title="wikt:主">主</a> master or husband;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%AB" class="extiw" title="wikt:夫">夫</a> husband or man;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A6%BB" class="extiw" title="wikt:妻">妻</a> wife;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A9%A6" class="extiw" title="wikt:婦">婦</a> wife or lady;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8E%8B" class="extiw" title="wikt:王">王</a> king;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9A%87" class="extiw" title="wikt:皇">皇</a> emperor or sovereign;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B8%9D" class="extiw" title="wikt:帝">帝</a> Mikado or emperor;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A7%AB" class="extiw" title="wikt:姫">姫</a> princess;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AA%9B" class="extiw" title="wikt:媛">媛</a> princess;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A6%83" class="extiw" title="wikt:妃">妃</a> princess, queen;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%90%8E" class="extiw" title="wikt:后">后</a> empress;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BC%AF" class="extiw" title="wikt:伯">伯</a> earl, count;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BE%AF" class="extiw" title="wikt:侯">侯</a> lord, marquis;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%88%B5" class="extiw" title="wikt:爵">爵</a> noble rank;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A3%AB" class="extiw" title="wikt:士">士</a> man or gentleman;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%B9" class="extiw" title="wikt:方">方</a> honorable person;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BC%A2" class="extiw" title="wikt:漢">漢</a> honorable man or <a href="/wiki/Han_Chinese" title="Han Chinese">Han</a> person;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BD%A6" class="extiw" title="wikt:彦">彦</a> boy, high-status man;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%82%91" class="extiw" title="wikt:傑">傑</a> great man;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%B3" class="extiw" title="wikt:紳">紳</a> gentleman;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%8F" class="extiw" title="wikt:氏">氏</a> courtesy title;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%95%B7" class="extiw" title="wikt:長">長</a> leader;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BF%82" class="extiw" title="wikt:係">係</a> person in charge;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9D%A3" class="extiw" title="wikt:督">督</a> supervisor;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B8%AB" class="extiw" title="wikt:師">師</a> expert;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BB%B2" class="extiw" title="wikt:仲">仲</a> intermediary;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BD%BF" class="extiw" title="wikt:使">使</a> messenger;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%BB" class="extiw" title="wikt:医">医</a> doctor;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%8B" class="extiw" title="wikt:友">友</a> friend;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%83%9A" class="extiw" title="wikt:僚">僚</a> colleague;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BC%A9" class="extiw" title="wikt:輩">輩</a> fellow, comrade;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%A2" class="extiw" title="wikt:客">客</a> guest, customer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%93" class="extiw" title="wikt:賓">賓</a> guest, VIP;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9A%A3" class="extiw" title="wikt:隣">隣</a> neighbour;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A5%B4" class="extiw" title="wikt:奴">奴</a> servant, fellow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9A%B7" class="extiw" title="wikt:隷">隷</a> underling;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BB%99" class="extiw" title="wikt:仙">仙</a> hermit</span>
+</p>
+<h3><span id="Family_.28.E5.AE.B6_.2F_.E6.97.8F.29"></span><span class="mw-headline" id="Family_(家_/_族)">Family (<a href="https://en.wiktionary.org/wiki/%E5%AE%B6" class="extiw" title="wikt:家">家</a> / <a href="https://en.wiktionary.org/wiki/%E6%97%8F" class="extiw" title="wikt:族">族</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=27" title="Edit section: Family (家 / 族)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%90%8D" class="extiw" title="wikt:名">名</a> name;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%88%B6" class="extiw" title="wikt:父">父</a> father;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AF%8D" class="extiw" title="wikt:母">母</a> mother;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A6%AA" class="extiw" title="wikt:親">親</a> parent;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AB%81" class="extiw" title="wikt:嫁">嫁</a> wife, bride;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A8%98" class="extiw" title="wikt:娘">娘</a> daughter;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%9F" class="extiw" title="wikt:弟">弟</a> younger brother;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A6%B9" class="extiw" title="wikt:妹">妹</a> younger sister;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%84" class="extiw" title="wikt:兄">兄</a> older brother;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A7%89" class="extiw" title="wikt:姉">姉</a> older sister;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%88%BA" class="extiw" title="wikt:爺">爺</a> grandfather;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A9%86" class="extiw" title="wikt:婆">婆</a> grandmother;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A5%96" class="extiw" title="wikt:祖">祖</a> ancestor;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AD%AB" class="extiw" title="wikt:孫">孫</a> grandchild;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%94" class="extiw" title="wikt:叔">叔</a> aunt, uncle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BC%AF" class="extiw" title="wikt:伯">伯</a> aunt, uncle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%A5" class="extiw" title="wikt:甥">甥</a> nephew;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A7%AA" class="extiw" title="wikt:姪">姪</a> niece;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A9%BF" class="extiw" title="wikt:婿">婿</a> son-in-law, bridegroom;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%98%86" class="extiw" title="wikt:昆">昆</a> descendants;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%88%9A" class="extiw" title="wikt:戚">戚</a> relatives;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A9%9A" class="extiw" title="wikt:婚">婚</a> marry;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A7%BB" class="extiw" title="wikt:姻">姻</a> matrimony;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AB%A1" class="extiw" title="wikt:嫡">嫡</a> legitimate wife/family;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%A1" class="extiw" title="wikt:寡">寡</a> widow</span>
+</p>
+<h3><span id="Groups_.28.E5.9B.A3.29"></span><span class="mw-headline" id="Groups_(団)">Groups (<a href="https://en.wiktionary.org/wiki/%E5%9B%A3" class="extiw" title="wikt:団">団</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=28" title="Edit section: Groups (団)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9B%BD" class="extiw" title="wikt:国">国</a> country;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A4%BE" class="extiw" title="wikt:社">社</a> company;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B4%BE" class="extiw" title="wikt:派">派</a> faction, group;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B5%84" class="extiw" title="wikt:組">組</a> association, assemble;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BE%A4" class="extiw" title="wikt:群">群</a> flock, crowd</span>
+</p>
+<h2><span id="Body_.28.E8.BA.AB.29"></span><span class="mw-headline" id="Body_(身)">Body (<a href="https://en.wiktionary.org/wiki/%E8%BA%AB" class="extiw" title="wikt:身">身</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=29" title="Edit section: Body (身)">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="General_2">General</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=30" title="Edit section: General">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%89" class="extiw" title="wikt:肉">肉</a> flesh;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A1%80" class="extiw" title="wikt:血">血</a> blood;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%84%88" class="extiw" title="wikt:脈">脈</a> vein;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AD%8B" class="extiw" title="wikt:筋">筋</a> muscles;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AA%A8" class="extiw" title="wikt:骨">骨</a> bone;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AB%84" class="extiw" title="wikt:髄">髄</a> marrow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AF%80" class="extiw" title="wikt:節">節</a> joint;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9A%AE" class="extiw" title="wikt:皮">皮</a> / <a href="https://en.wiktionary.org/wiki/%E8%86%9A" class="extiw" title="wikt:膚">膚</a> / <a href="https://en.wiktionary.org/wiki/%E8%82%8C" class="extiw" title="wikt:肌">肌</a> skin;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9A%BA" class="extiw" title="wikt:皺">皺</a> wrinkle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%85%BA" class="extiw" title="wikt:腺">腺</a> gland</span>
+</p>
+<h3><span id="Head_.28.E9.A0.AD.29_and_Neck_.28.E9.A6.96.29"></span><span class="mw-headline" id="Head_(頭)_and_Neck_(首)">Head (<a href="https://en.wiktionary.org/wiki/%E9%A0%AD" class="extiw" title="wikt:頭">頭</a>) and Neck (<a href="https://en.wiktionary.org/wiki/%E9%A6%96" class="extiw" title="wikt:首">首</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=31" title="Edit section: Head (頭) and Neck (首)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%84%B3" class="extiw" title="wikt:脳">脳</a> brain;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AB%AA" class="extiw" title="wikt:髪">髪</a> hair;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A1%94" class="extiw" title="wikt:顔">顔</a> face;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AB%AD" class="extiw" title="wikt:髭">髭</a> beard;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A1%8D" class="extiw" title="wikt:額">額</a> forehead;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%80%B3" class="extiw" title="wikt:耳">耳</a> ear;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9B%AE" class="extiw" title="wikt:目">目</a> eye;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9C%BC" class="extiw" title="wikt:眼">眼</a> eyeball;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9C%89" class="extiw" title="wikt:眉">眉</a> eyebrow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9E%B3" class="extiw" title="wikt:瞳">瞳</a> pupil;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BC%BB" class="extiw" title="wikt:鼻">鼻</a> nose;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A1%8E" class="extiw" title="wikt:顎">顎</a> jaw;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%A3" class="extiw" title="wikt:口">口</a> mouth;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%94%87" class="extiw" title="wikt:唇">唇</a> lips;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%AF" class="extiw" title="wikt:歯">歯</a> tooth;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%88%8C" class="extiw" title="wikt:舌">舌</a> tongue;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A0%AC" class="extiw" title="wikt:頬">頬</a> cheek;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A0%A4" class="extiw" title="wikt:頤">頤</a> chin;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%96%89" class="extiw" title="wikt:喉">喉</a> throat;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%92%BD" class="extiw" title="wikt:咽">咽</a> throat;</span> 
+</p>
+<h3><span class="mw-headline" id="Torso_and_organs">Torso and organs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=32" title="Edit section: Torso and organs">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%83%B4" class="extiw" title="wikt:胴">胴</a> torso;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%83%8C" class="extiw" title="wikt:背">背</a> back;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%84%8A" class="extiw" title="wikt:脊">脊</a> backbone;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%91%82" class="extiw" title="wikt:呂">呂</a> backbone;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A4%8E" class="extiw" title="wikt:椎">椎</a> backbone;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%8B" class="extiw" title="wikt:肋">肋</a> rib;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%83%B8" class="extiw" title="wikt:胸">胸</a> chest;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%85%B9" class="extiw" title="wikt:腹">腹</a> stomach;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%83%83" class="extiw" title="wikt:胃">胃</a> stomach;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%87%8D" class="extiw" title="wikt:臍">臍</a> navel;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%85%B0" class="extiw" title="wikt:腰">腰</a> waist;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%87%93" class="extiw" title="wikt:臓">臓</a> entrails;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%85%B8" class="extiw" title="wikt:腸">腸</a> intestines;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BF%83" class="extiw" title="wikt:心">心</a> heart;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%BA" class="extiw" title="wikt:肺">肺</a> lung;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%9D" class="extiw" title="wikt:肝">肝</a> liver;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%86%B5" class="extiw" title="wikt:膵">膵</a> pancreas;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%85%8E" class="extiw" title="wikt:腎">腎</a> kidney;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%83%86" class="extiw" title="wikt:胆">胆</a> gall bladder;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%9B" class="extiw" title="wikt:肛">肛</a> anus;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%86%A3" class="extiw" title="wikt:膣">膣</a> vagina</span>
+</p>
+<h3><span id="Limbs_.28.E8.82.A2.29"></span><span class="mw-headline" id="Limbs_(肢)">Limbs (<a href="https://en.wiktionary.org/wiki/%E8%82%A2" class="extiw" title="wikt:肢">肢</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=33" title="Edit section: Limbs (肢)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%85%95" class="extiw" title="wikt:腕">腕</a> arm;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%A9" class="extiw" title="wikt:肩">肩</a> shoulder;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%84%87" class="extiw" title="wikt:脇">脇</a> armpit;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%98" class="extiw" title="wikt:肘">肘</a> elbow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%89%8B" class="extiw" title="wikt:手">手</a> hand;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%8B%B3" class="extiw" title="wikt:拳">拳</a> fist;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%8C%87" class="extiw" title="wikt:指">指</a> finger;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%88%AA" class="extiw" title="wikt:爪">爪</a> nail;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%8E%8C" class="extiw" title="wikt:掌">掌</a> palm;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%BB" class="extiw" title="wikt:尻">尻</a> buttocks;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%A1" class="extiw" title="wikt:股">股</a> thighs;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%84%9A" class="extiw" title="wikt:脚">脚</a> leg;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B6%B3" class="extiw" title="wikt:足">足</a> leg, foot;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%86%9D" class="extiw" title="wikt:膝">膝</a> knee;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B8%9D" class="extiw" title="wikt:踝">踝</a> ankle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B8%B5" class="extiw" title="wikt:踵">踵</a> heel</span>
+</p>
+<h3><span class="mw-headline" id="Bodily_Functions">Bodily Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=34" title="Edit section: Bodily Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%9F" class="extiw" title="wikt:生">生</a> birth;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%A3" class="extiw" title="wikt:産">産</a> give birth;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%81%AF" class="extiw" title="wikt:息">息</a> breath;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A4%A2" class="extiw" title="wikt:夢">夢</a> dream</span>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BE%BF" class="extiw" title="wikt:便">便</a> faeces;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%83%8E" class="extiw" title="wikt:胎">胎</a> foetus;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A6%8A" class="extiw" title="wikt:妊">妊</a> / <a href="https://en.wiktionary.org/wiki/%E5%A8%A0" class="extiw" title="wikt:娠">娠</a> pregnant;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%94%BE" class="extiw" title="wikt:唾">唾</a> saliva;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%9D" class="extiw" title="wikt:寝">寝</a> / <a href="https://en.wiktionary.org/wiki/%E7%9C%A0" class="extiw" title="wikt:眠">眠</a> / <a href="https://en.wiktionary.org/wiki/%E7%9D%A1" class="extiw" title="wikt:睡">睡</a> sleep;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B2%BE" class="extiw" title="wikt:精">精</a> sperm;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%93%BA" class="extiw" title="wikt:哺">哺</a> suckle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B1%97" class="extiw" title="wikt:汗">汗</a> sweat;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B3%AA" class="extiw" title="wikt:泪">泪</a> / <a href="https://en.wiktionary.org/wiki/%E6%B6%99" class="extiw" title="wikt:涙">涙</a> tear;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%BF" class="extiw" title="wikt:尿">尿</a> urine;</span>
+</p>
+<h3><span id="Health_.28.E4.BD.93.29"></span><span class="mw-headline" id="Health_(体)">Health (<a href="https://en.wiktionary.org/wiki/%E4%BD%93" class="extiw" title="wikt:体">体</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=35" title="Edit section: Health (体)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%99%8C" class="extiw" title="wikt:癌">癌</a> cancer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AA%B8" class="extiw" title="wikt:骸">骸</a> corpse;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B2%BB" class="extiw" title="wikt:治">治</a> cure;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%BB" class="extiw" title="wikt:死">死</a> death;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%A2" class="extiw" title="wikt:痢">痢</a> diarrhea;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%87" class="extiw" title="wikt:症">症</a> / <a href="https://en.wiktionary.org/wiki/%E7%96%BE" class="extiw" title="wikt:疾">疾</a> disease;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%BB" class="extiw" title="wikt:医">医</a> doctor or medicine;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%96%AC" class="extiw" title="wikt:薬">薬</a> drug</span>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%96%AB" class="extiw" title="wikt:疫">疫</a> epidemic;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%99%82" class="extiw" title="wikt:療">療</a> / <a href="https://en.wiktionary.org/wiki/%E7%99%92" class="extiw" title="wikt:癒">癒</a> heal;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%85" class="extiw" title="wikt:病">病</a> illness;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%9F" class="extiw" title="wikt:生">生</a> life;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%89%A4" class="extiw" title="wikt:剤">剤</a> medicine;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%9B" class="extiw" title="wikt:痛">痛</a> pain;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8C%A0" class="extiw" title="wikt:錠">錠</a> pill;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%98" class="extiw" title="wikt:痘">痘</a> pox;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BC%91" class="extiw" title="wikt:休">休</a> rest;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%95" class="extiw" title="wikt:痕">痕</a> scar;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%82%A3" class="extiw" title="wikt:患">患</a> sick;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8A%9B" class="extiw" title="wikt:力">力</a> strength;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%96%B2" class="extiw" title="wikt:疲">疲</a> tired;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%98%8D" class="extiw" title="wikt:瘍">瘍</a> ulcer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%97%A9" class="extiw" title="wikt:痩">痩</a> weight loss;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%82%B7" class="extiw" title="wikt:傷">傷</a> wound;</span>
+</p>
+<h3><span class="mw-headline" id="Actions">Actions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=36" title="Edit section: Actions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AB%8B" class="extiw" title="wikt:立">立</a> stand up;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B5%B0" class="extiw" title="wikt:走">走</a> run;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%A7" class="extiw" title="wikt:座">座</a> sit;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B8%8A" class="extiw" title="wikt:踊">踊</a> jump;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%A9" class="extiw" title="wikt:歩">歩</a> walk;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B3%B3" class="extiw" title="wikt:泳">泳</a> swim;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%A2" class="extiw" title="wikt:止">止</a> stop</span>
+</p>
+<h2><span id="Emotions_and_Senses_.28.E6.84.9F.29"></span><span class="mw-headline" id="Emotions_and_Senses_(感)">Emotions and Senses (<a href="https://en.wiktionary.org/wiki/%E6%84%9F" class="extiw" title="wikt:感">感</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=37" title="Edit section: Emotions and Senses (感)">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span id="Emotions_.28.E6.83.85.29"></span><span class="mw-headline" id="Emotions_(情)">Emotions (<a href="https://en.wiktionary.org/wiki/%E6%83%85" class="extiw" title="wikt:情">情</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=38" title="Edit section: Emotions (情)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B4%87" class="extiw" title="wikt:崇">崇</a> / <a href="https://en.wiktionary.org/wiki/%E6%85%95" class="extiw" title="wikt:慕">慕</a> adoration or reverence</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%85%88" class="extiw" title="wikt:慈">慈</a> affection or benevolence</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%80%92" class="extiw" title="wikt:怒">怒</a> anger</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%85%A9" class="extiw" title="wikt:煩">煩</a> anxiety, annoyance</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%8F" class="extiw" title="wikt:畏">畏</a> apprehension</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%83%91" class="extiw" title="wikt:惑">惑</a> bewilderment</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BF%B7" class="extiw" title="wikt:迷">迷</a> / <a href="https://en.wiktionary.org/wiki/%E7%B4%9B" class="extiw" title="wikt:紛">紛</a> confusion</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A5%BD" class="extiw" title="wikt:楽">楽</a> comfort</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%94%91" class="extiw" title="wikt:蔑">蔑</a> contempt</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%96%9C" class="extiw" title="wikt:喜">喜</a> / <a href="https://en.wiktionary.org/wiki/%E6%AD%93" class="extiw" title="wikt:歓">歓</a> delight, joy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AC%B2" class="extiw" title="wikt:欲">欲</a> desire</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%85%8C" class="extiw" title="wikt:慌">慌</a> disconcerting</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AB%8C" class="extiw" title="wikt:嫌">嫌</a> dislike</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%96%91" class="extiw" title="wikt:疑">疑</a> doubt or suspicion</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%83%A7" class="extiw" title="wikt:惧">惧</a> / <a href="https://en.wiktionary.org/wiki/%E6%80%96" class="extiw" title="wikt:怖">怖</a> dread</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%82%A6" class="extiw" title="wikt:悦">悦</a> ecstasy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A6%AC" class="extiw" title="wikt:妬">妬</a> / <a href="https://en.wiktionary.org/wiki/%E7%BE%A8" class="extiw" title="wikt:羨">羨</a> / <a href="https://en.wiktionary.org/wiki/%E5%AB%89" class="extiw" title="wikt:嫉">嫉</a> envy, jealousy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%85%84" class="extiw" title="wikt:慄">慄</a> / <a href="https://en.wiktionary.org/wiki/%E6%81%90" class="extiw" title="wikt:恐">恐</a> / <a href="https://en.wiktionary.org/wiki/%E8%99%9E" class="extiw" title="wikt:虞">虞</a> fear</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A8%AF" class="extiw" title="wikt:娯">娯</a> fun</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%88%9A" class="extiw" title="wikt:戚">戚</a> grief</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%B8" class="extiw" title="wikt:幸">幸</a> happy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%86%8E" class="extiw" title="wikt:憎">憎</a> hate</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%86%A4" class="extiw" title="wikt:憤">憤</a> indignation</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%85%B6" class="extiw" title="wikt:慶">慶</a> jubilation</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AC%91" class="extiw" title="wikt:笑">笑</a> laughter</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A5%BD" class="extiw" title="wikt:好">好</a> like</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%82" class="extiw" title="wikt:寂">寂</a> loneliness</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%86%A7" class="extiw" title="wikt:憧">憧</a> longing, yearning</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%84%9B" class="extiw" title="wikt:愛">愛</a> / <a href="https://en.wiktionary.org/wiki/%E6%81%8B" class="extiw" title="wikt:恋">恋</a> love</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%84%81" class="extiw" title="wikt:愁">愁</a> / <a href="https://en.wiktionary.org/wiki/%E9%AC%B1" class="extiw" title="wikt:鬱">鬱</a> melancholy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B0%97" class="extiw" title="wikt:気">気</a> mood</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BF%AB" class="extiw" title="wikt:快">快</a> / </span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%82%B2" class="extiw" title="wikt:傲">傲</a> pride</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%83%9C" class="extiw" title="wikt:惜">惜</a> / <a href="https://en.wiktionary.org/wiki/%E6%86%BE" class="extiw" title="wikt:憾">憾</a> regret</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%82%94" class="extiw" title="wikt:悔">悔</a> remorse</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%81%A8" class="extiw" title="wikt:恨">恨</a> / <a href="https://en.wiktionary.org/wiki/%E6%80%A8" class="extiw" title="wikt:怨">怨</a> resentment</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%81%AD" class="extiw" title="wikt:恭">恭</a> / <a href="https://en.wiktionary.org/wiki/%E6%95%AC" class="extiw" title="wikt:敬">敬</a> respect</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%93%80" class="extiw" title="wikt:哀">哀</a> sadness or pity</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%81%A5" class="extiw" title="wikt:恥">恥</a> / <a href="https://en.wiktionary.org/wiki/%E7%BE%9E" class="extiw" title="wikt:羞">羞</a> shame</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A9%9A" class="extiw" title="wikt:驚">驚</a> surprise</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BF%80" class="extiw" title="wikt:激">激</a> violent excitement</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9A%B4" class="extiw" title="wikt:暴">暴</a> violent rage</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%86%82" class="extiw" title="wikt:憂">憂</a> worry</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%87%90" class="extiw" title="wikt:懐">懐</a> / <a href="https://en.wiktionary.org/wiki/%E6%86%AC" class="extiw" title="wikt:憬">憬</a> yearning</span>.
+</p>
+<h3><span class="mw-headline" id="Senses">Senses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=39" title="Edit section: Senses">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><span class="nowrap">to Hear (<a href="https://en.wiktionary.org/wiki/%E8%81%9E" class="extiw" title="wikt:聞">聞</a>)</span>;</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%81%B4" class="extiw" title="wikt:聴">聴</a> listen</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9F%B3" class="extiw" title="wikt:音">音</a> sound</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9D%99" class="extiw" title="wikt:静">静</a> quiet</span>;
+<br /><b><span class="nowrap">to See (<a href="https://en.wiktionary.org/wiki/%E8%A6%8B" class="extiw" title="wikt:見">見</a>)</span>;</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9B%B2" class="extiw" title="wikt:盲">盲</a> blind</span>;
+<br /><b><span class="nowrap">to Smell (<a href="https://en.wiktionary.org/wiki/%E5%97%85" class="extiw" title="wikt:嗅">嗅</a>)</span>;</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A6%9D" class="extiw" title="wikt:馝">馝</a> aroma, strong fragrance</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%87%AD" class="extiw" title="wikt:臭">臭</a> bad smell</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%82" class="extiw" title="wikt:匂">匂</a> fragrance</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8A%B3" class="extiw" title="wikt:芳">芳</a> fragrant</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A6%99" class="extiw" title="wikt:香">香</a> pleasant smell</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BE%9B" class="extiw" title="wikt:辛">辛</a> pungent</span>;
+<br /><b><span class="nowrap">to Taste (<a href="https://en.wiktionary.org/wiki/%E5%91%B3" class="extiw" title="wikt:味">味</a>)</span>;</b>
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BE%A3" class="extiw" title="wikt:辣">辣</a> bitter</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%B8" class="extiw" title="wikt:酸">酸</a> sour</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BE%A3" class="extiw" title="wikt:辣">辣</a> spicy</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%98" class="extiw" title="wikt:甘">甘</a> sweet</span>;
+<br /><b><span class="nowrap">to Feel (<a href="https://en.wiktionary.org/wiki/%E8%A7%A6" class="extiw" title="wikt:触">触</a>)</span>;</b>
+</p>
+<h3><span id="Judgment_.28.E8.A9.95.29"></span><span class="mw-headline" id="Judgment_(評)">Judgment (<a href="https://en.wiktionary.org/wiki/%E8%A9%95" class="extiw" title="wikt:評">評</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=40" title="Edit section: Judgment (評)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%82%AA" class="extiw" title="wikt:悪">悪</a> bad</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%A3" class="extiw" title="wikt:正">正</a> correct</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%89%AF" class="extiw" title="wikt:良">良</a> / <a href="https://en.wiktionary.org/wiki/%E5%96%84" class="extiw" title="wikt:善">善</a> good</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%90%86" class="extiw" title="wikt:理">理</a> reason</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%80%9D" class="extiw" title="wikt:思">思</a> / <a href="https://en.wiktionary.org/wiki/%E8%80%83" class="extiw" title="wikt:考">考</a> to think</span>.
+</p>
+<h3><span id="Food_.28.E9.A3.9F.29_and_Drink_.28.E9.A3.B2.29"></span><span class="mw-headline" id="Food_(食)_and_Drink_(飲)">Food (<a href="https://en.wiktionary.org/wiki/%E9%A3%9F" class="extiw" title="wikt:食">食</a>) and Drink (<a href="https://en.wiktionary.org/wiki/%E9%A3%B2" class="extiw" title="wikt:飲">飲</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=41" title="Edit section: Food (食) and Drink (飲)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl><dd><i>See also Animals and Plants</i></dd></dl>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%92" class="extiw" title="wikt:酒">酒</a> alcoholic drink</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BA%A6" class="extiw" title="wikt:麦">麦</a> barley or wheat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B1%86" class="extiw" title="wikt:豆">豆</a> bean</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A9%80" class="extiw" title="wikt:穀">穀</a> cereal</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A0%97" class="extiw" title="wikt:栗">栗</a> chestnut</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A3%AF" class="extiw" title="wikt:飯">飯</a> cooked rice, meal</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8F%93" class="extiw" title="wikt:菓">菓</a> confectionery</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%AA" class="extiw" title="wikt:酪">酪</a> dairy products</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A9%82" class="extiw" title="wikt:穂">穂</a> ear of grain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%B5" class="extiw" title="wikt:卵">卵</a> egg</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B2%89" class="extiw" title="wikt:粉">粉</a> flour</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%9C" class="extiw" title="wikt:果">果</a> / <a href="https://en.wiktionary.org/wiki/%E5%AE%9F" class="extiw" title="wikt:実">実</a> fruit</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B2%92" class="extiw" title="wikt:粒">粒</a> grain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%9C%9C" class="extiw" title="wikt:蜜">蜜</a> honey</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B1%81" class="extiw" title="wikt:汁">汁</a> juice, soup</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%82%89" class="extiw" title="wikt:肉">肉</a> meat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B9%B3" class="extiw" title="wikt:乳">乳</a> milk</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BA%BA" class="extiw" title="wikt:麺">麺</a> noodles</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8A%8B" class="extiw" title="wikt:芋">芋</a> potato</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BC%AC" class="extiw" title="wikt:漬">漬</a> pickle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B1%B3" class="extiw" title="wikt:米">米</a> rice</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A4%85" class="extiw" title="wikt:餅">餅</a> rice cake</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%8E" class="extiw" title="wikt:酎">酎</a> sake</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B3%96" class="extiw" title="wikt:糖">糖</a> sugar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AE%A8" class="extiw" title="wikt:鮨">鮨</a> <a href="/wiki/Sushi" title="Sushi">sushi</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8C%B6" class="extiw" title="wikt:茶">茶</a> tea</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8F%9C" class="extiw" title="wikt:菜">菜</a> vegetable</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%A2" class="extiw" title="wikt:酢">酢</a> vinegar</span>.
+</p>
+<h3><span id="Cooking_.28.E7.82.8A.29"></span><span class="mw-headline" id="Cooking_(炊)">Cooking (<a href="https://en.wiktionary.org/wiki/%E7%82%8A" class="extiw" title="wikt:炊">炊</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=42" title="Edit section: Cooking (炊)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%84%BC" class="extiw" title="wikt:焼">焼</a> to bake</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%85%8E" class="extiw" title="wikt:煎">煎</a> to boil, roast</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%BC" class="extiw" title="wikt:丼">丼</a> bowl of food</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%86%B8" class="extiw" title="wikt:醸">醸</a> to brew</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AE%B8" class="extiw" title="wikt:箸">箸</a> chopsticks</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%8F%9A" class="extiw" title="wikt:揚">揚</a> to fry</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%85%8C" class="extiw" title="wikt:酌">酌</a> to serve alcohol</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%92%B8" class="extiw" title="wikt:蒸">蒸</a> to steam</span>.
+</p>
+<h2><span class="mw-headline" id="Artificial_Structures_and_Products">Artificial Structures and Products</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=43" title="Edit section: Artificial Structures and Products">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span id="Cities_.28.E5.B8.82.29"></span><span class="mw-headline" id="Cities_(市)">Cities (<a href="https://en.wiktionary.org/wiki/%E5%B8%82" class="extiw" title="wikt:市">市</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=44" title="Edit section: Cities (市)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%BF" class="extiw" title="wikt:畿">畿</a> capital</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BA%AC" class="extiw" title="wikt:京">京</a> capital city</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%83%BD" class="extiw" title="wikt:都">都</a> metropolis</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A1%97" class="extiw" title="wikt:街">街</a> city district</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%BA" class="extiw" title="wikt:町">町</a> town</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8D%98" class="extiw" title="wikt:荘">荘</a> villa</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%91" class="extiw" title="wikt:村">村</a> village</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8C%BA" class="extiw" title="wikt:区">区</a> ward</span>.
+</p>
+<h4><span id="Buildings_.28.E6.88.BF.29_and_Structures"></span><span class="mw-headline" id="Buildings_(房)_and_Structures">Buildings (<a href="https://en.wiktionary.org/wiki/%E6%88%BF" class="extiw" title="wikt:房">房</a>) and Structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=45" title="Edit section: Buildings (房) and Structures">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A1%81" class="extiw" title="wikt:塁">塁</a> base or fort</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%81" class="extiw" title="wikt:桁">桁</a> beam or column</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BB%BA" class="extiw" title="wikt:建">建</a> build</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%88%8E" class="extiw" title="wikt:舎">舎</a> building</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9F%8E" class="extiw" title="wikt:城">城</a> castle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BB%8A" class="extiw" title="wikt:廊">廊</a> corridor</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%AD" class="extiw" title="wikt:庭">庭</a> courtyard or garden</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%88%B8" class="extiw" title="wikt:戸">戸</a> / <a href="https://en.wiktionary.org/wiki/%E6%89%89" class="extiw" title="wikt:扉">扉</a> door</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%AE" class="extiw" title="wikt:寮">寮</a> dormitory</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B1%8B" class="extiw" title="wikt:屋">屋</a> dwelling / roof or shop</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9E%A3" class="extiw" title="wikt:垣">垣</a> / <a href="https://en.wiktionary.org/wiki/%E6%9F%B5" class="extiw" title="wikt:柵">柵</a> / <a href="https://en.wiktionary.org/wiki/%E5%A1%80" class="extiw" title="wikt:塀">塀</a> fence or low wall</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%82%89" class="extiw" title="wikt:炉">炉</a> fireplace or hearth</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9C%92" class="extiw" title="wikt:園">園</a> garden</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%96%80" class="extiw" title="wikt:門">門</a> gate</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B8%AF" class="extiw" title="wikt:港">港</a> / <a href="https://en.wiktionary.org/wiki/%E6%B4%A5" class="extiw" title="wikt:津">津</a> harbour or port</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%85" class="extiw" title="wikt:宅">宅</a> home</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%B6" class="extiw" title="wikt:家">家</a> house</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%96%A3" class="extiw" title="wikt:閣">閣</a> imposing building</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%BF" class="extiw" title="wikt:宿">宿</a> inn</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8A%9D" class="extiw" title="wikt:芝">芝</a> lawn</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A2%91" class="extiw" title="wikt:碑">碑</a> monument</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AE%BF" class="extiw" title="wikt:殿">殿</a> palace</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8B%91" class="extiw" title="wikt:苑">苑</a> park</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BA%AD" class="extiw" title="wikt:亭">亭</a> pavilion</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%B0" class="extiw" title="wikt:台">台</a> pedestal</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9F%B1" class="extiw" title="wikt:柱">柱</a> pillar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A3%87" class="extiw" title="wikt:壇">壇</a> podium</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8D%84" class="extiw" title="wikt:獄">獄</a> prison</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A4%A8" class="extiw" title="wikt:館">館</a> public building</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A3%9F" class="extiw" title="wikt:棟">棟</a> ridgepole</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%A4" class="extiw" title="wikt:室">室</a> room</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A3%9A" class="extiw" title="wikt:棚">棚</a> shelf</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%97" class="extiw" title="wikt:店">店</a> shop</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%AE" class="extiw" title="wikt:宮">宮</a> shrine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A7%85" class="extiw" title="wikt:駅">駅</a> station</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%AB" class="extiw" title="wikt:庫">庫</a> storage room</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%94%B5" class="extiw" title="wikt:蔵">蔵</a> storehouse</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A0%82" class="extiw" title="wikt:堂">堂</a> / <a href="https://en.wiktionary.org/wiki/%E5%AF%BA" class="extiw" title="wikt:寺">寺</a> temple</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A5%BC" class="extiw" title="wikt:楼">楼</a> / <a href="https://en.wiktionary.org/wiki/%E5%A1%94" class="extiw" title="wikt:塔">塔</a> tower</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A3%81" class="extiw" title="wikt:壁">壁</a> wall</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%80%89" class="extiw" title="wikt:倉">倉</a> warehouse</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BA%95" class="extiw" title="wikt:井">井</a> well</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AA%93" class="extiw" title="wikt:窓">窓</a> window</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A1%9F" class="extiw" title="wikt:桟">桟</a> wooden structure</span>.
+</p>
+<h4><span id="Roads_.28.E8.B7.AF.29"></span><span class="mw-headline" id="Roads_(路)">Roads (<a href="https://en.wiktionary.org/wiki/%E8%B7%AF" class="extiw" title="wikt:路">路</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=46" title="Edit section: Roads (路)">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A9%8B" class="extiw" title="wikt:橋">橋</a> bridge</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BE%BB" class="extiw" title="wikt:辻">辻</a> crossroads</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B2%90" class="extiw" title="wikt:岐">岐</a> fork in the road</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%81%93" class="extiw" title="wikt:道">道</a> path or road</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%80%94" class="extiw" title="wikt:途">途</a> router or way</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A1%97" class="extiw" title="wikt:街">街</a> street</span>.
+</p>
+<h3><span id="Vehicles_.28.E8.BB.8A.29_and_Machines_.28.E6.A9.9F.29"></span><span class="mw-headline" id="Vehicles_(車)_and_Machines_(機)">Vehicles (<a href="https://en.wiktionary.org/wiki/%E8%BB%8A" class="extiw" title="wikt:車">車</a>) and Machines (<a href="https://en.wiktionary.org/wiki/%E6%A9%9F" class="extiw" title="wikt:機">機</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=47" title="Edit section: Vehicles (車) and Machines (機)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BB%B8" class="extiw" title="wikt:軸">軸</a> axle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%90%AD" class="extiw" title="wikt:搭">搭</a> to board or load</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%88%9F" class="extiw" title="wikt:舟">舟</a> boat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A2%B0" class="extiw" title="wikt:械">械</a> contraption</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%88%B6" class="extiw" title="wikt:舶">舶</a> oceangoing ship</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8A%9B" class="extiw" title="wikt:力">力</a> power</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B9%97" class="extiw" title="wikt:乗">乗</a> to ride</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%88%B9" class="extiw" title="wikt:船">船</a> / <a href="https://en.wiktionary.org/wiki/%E8%89%87" class="extiw" title="wikt:艇">艇</a> ship</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%88%B7" class="extiw" title="wikt:舷">舷</a> sides of a boat</span>.
+</p>
+<h3><span id="Clothing_.28.E6.9C.8D.29_and_Textiles_.28.E5.B8.83.29"></span><span class="mw-headline" id="Clothing_(服)_and_Textiles_(布)">Clothing (<a href="https://en.wiktionary.org/wiki/%E6%9C%8D" class="extiw" title="wikt:服">服</a>) and Textiles (<a href="https://en.wiktionary.org/wiki/%E5%B8%83" class="extiw" title="wikt:布">布</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=48" title="Edit section: Clothing (服) and Textiles (布)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A3%85" class="extiw" title="wikt:装">装</a> attire</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B8%AF" class="extiw" title="wikt:帯">帯</a> belt</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8C%A6" class="extiw" title="wikt:錦">錦</a> brocade</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A5%9F" class="extiw" title="wikt:襟">襟</a> collar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B6%BF" class="extiw" title="wikt:綿">綿</a> cotton</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A3%BE" class="extiw" title="wikt:裾">裾</a> cuff or hem</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B6%AD" class="extiw" title="wikt:維">維</a> fibre</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B1%A5" class="extiw" title="wikt:履">履</a> footwear</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A1%A3" class="extiw" title="wikt:衣">衣</a> garment</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B8%BD" class="extiw" title="wikt:帽">帽</a> hat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9D%A9" class="extiw" title="wikt:革">革</a> leather</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B8%AB" class="extiw" title="wikt:縫">縫</a> to sew</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9D%B4" class="extiw" title="wikt:靴">靴</a> shoes</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B5%B9" class="extiw" title="wikt:絹">絹</a> silk</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A2%96" class="extiw" title="wikt:袖">袖</a> sleeve</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%A1" class="extiw" title="wikt:紡">紡</a> to spin or weave</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B3%B8" class="extiw" title="wikt:糸">糸</a> thread</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%BE" class="extiw" title="wikt:巾">巾</a> towel</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9D%80" class="extiw" title="wikt:着">着</a> to wear</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B9%94" class="extiw" title="wikt:織">織</a> to weave</span>.
+</p>
+<h3><span class="mw-headline" id="Miscellaneous_Manufactured_Items">Miscellaneous Manufactured Items</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=49" title="Edit section: Miscellaneous Manufactured Items">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%93%81" class="extiw" title="wikt:品">品</a> article</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%A4" class="extiw" title="wikt:斤">斤</a> axe</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A2%8B" class="extiw" title="wikt:袋">袋</a> bag</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9B%86" class="extiw" title="wikt:盆">盆</a> basin or tray</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B1%A0" class="extiw" title="wikt:籠">籠</a> basket</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BA%8A" class="extiw" title="wikt:床">床</a> bed</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%88%B4" class="extiw" title="wikt:鈴">鈴</a> / <a href="https://en.wiktionary.org/wiki/%E9%90%98" class="extiw" title="wikt:鐘">鐘</a> bell</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9B%A4" class="extiw" title="wikt:盤">盤</a> board or disk</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%BF" class="extiw" title="wikt:板">板</a> board or plate</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%93%B6" class="extiw" title="wikt:瓶">瓶</a> bottle or jar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%89%A2" class="extiw" title="wikt:鉢">鉢</a> / <a href="https://en.wiktionary.org/wiki/%E4%B8%BC" class="extiw" title="wikt:丼">丼</a> bowl</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AE%B1" class="extiw" title="wikt:箱">箱</a> box</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8B%B3" class="extiw" title="wikt:鋳">鋳</a> casting</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8E%96" class="extiw" title="wikt:鎖">鎖</a> chain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A4%85" class="extiw" title="wikt:椅">椅</a> chair</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A3%BA" class="extiw" title="wikt:棺">棺</a> coffin</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%A2" class="extiw" title="wikt:索">索</a> cord</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AE%B8" class="extiw" title="wikt:箸">箸</a> chopsticks</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9D%AF" class="extiw" title="wikt:杯">杯</a> cup</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%95" class="extiw" title="wikt:幕">幕</a> curtain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%BA" class="extiw" title="wikt:机">机</a> desk</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9A%BF" class="extiw" title="wikt:皿">皿</a> dish or plate</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%89%87" class="extiw" title="wikt:扇">扇</a> fan</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%88%8E" class="extiw" title="wikt:鈎">鈎</a> fish hook</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%A2" class="extiw" title="wikt:枢">枢</a> hinge or pivot</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%9C" class="extiw" title="wikt:釜">釜</a> kettle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8D%B5" class="extiw" title="wikt:鍵">鍵</a> key</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AA%AF" class="extiw" title="wikt:窯">窯</a> kiln or stove</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%BC%86" class="extiw" title="wikt:漆">漆</a> lacquer</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%81%AF" class="extiw" title="wikt:灯">灯</a> lamp</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%93%8B" class="extiw" title="wikt:蓋">蓋</a> lid</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8C%A0" class="extiw" title="wikt:錠">錠</a> lock</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%87%BC" class="extiw" title="wikt:臼">臼</a> millstone or mortar</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8F%A1" class="extiw" title="wikt:鏡">鏡</a> mirror</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%9D" class="extiw" title="wikt:針">針</a> needle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B6%B2" class="extiw" title="wikt:網">網</a> net</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A1%97" class="extiw" title="wikt:塗">塗</a> paint</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B4%99" class="extiw" title="wikt:紙">紙</a> / <a href="https://en.wiktionary.org/wiki/%E7%AE%8B" class="extiw" title="wikt:箋">箋</a> paper</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9E%95" class="extiw" title="wikt:枕">枕</a> pillow</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AE%A1" class="extiw" title="wikt:管">管</a> pipe</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A0%93" class="extiw" title="wikt:栓">栓</a> plug or stopper</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8C%98" class="extiw" title="wikt:錘">錘</a> plumb or spindle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A3%81" class="extiw" title="wikt:磁">磁</a> porcelain</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8D%8B" class="extiw" title="wikt:鍋">鍋</a> pot</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%99%B6" class="extiw" title="wikt:陶">陶</a> pottery</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A3%92" class="extiw" title="wikt:棒">棒</a> rod</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B8%84" class="extiw" title="wikt:縄">縄</a> / <a href="https://en.wiktionary.org/wiki/%E7%B6%B1" class="extiw" title="wikt:綱">綱</a> rope</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B8%86" class="extiw" title="wikt:帆">帆</a> sail</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8E%8C" class="extiw" title="wikt:鎌">鎌</a> sickle</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%B8%B2" class="extiw" title="wikt:串">串</a> skewer</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BF%B5" class="extiw" title="wikt:俵">俵</a> straw bag or sack</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%A6" class="extiw" title="wikt:弦">弦</a> string</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%93" class="extiw" title="wikt:卓">卓</a> table</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A7%BD" class="extiw" title="wikt:槽">槽</a> tank</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%95%B3" class="extiw" title="wikt:畳">畳</a> tatami mat</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%93%A6" class="extiw" title="wikt:瓦">瓦</a> tile</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BC%B6" class="extiw" title="wikt:缶">缶</a> tin can</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%85%B7" class="extiw" title="wikt:具">具</a> tool</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%86%B3" class="extiw" title="wikt:膳">膳</a> tray or small table</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%82%98" class="extiw" title="wikt:傘">傘</a> umbrella</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%99%A8" class="extiw" title="wikt:器">器</a> vessel</span>.
+</p>
+<h2><span class="mw-headline" id="Human_activities">Human activities</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=50" title="Edit section: Human activities">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Culture">Culture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=51" title="Edit section: Culture">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%8A%B8" class="extiw" title="wikt:芸">芸</a> art;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B5%B5" class="extiw" title="wikt:絵">絵</a> picture, painting;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%BB" class="extiw" title="wikt:画">画</a> picture;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A5%BD" class="extiw" title="wikt:楽">楽</a> music;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%B2" class="extiw" title="wikt:曲">曲</a> musical composition;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%8C" class="extiw" title="wikt:歌">歌</a> song;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AC%A1" class="extiw" title="wikt:謡">謡</a> song, noh chant;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%94%84" class="extiw" title="wikt:唄">唄</a> song;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AB%A7" class="extiw" title="wikt:諧">諧</a> harmony;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%90%B4" class="extiw" title="wikt:琴">琴</a> cithare, harp;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AC%9B" class="extiw" title="wikt:笛">笛</a> flute;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%BC%93" class="extiw" title="wikt:鼓">鼓</a> drum;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%8B%8D" class="extiw" title="wikt:拍">拍</a> clap, beat (music);</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AF%80" class="extiw" title="wikt:節">節</a> tune, melody;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A9%A9" class="extiw" title="wikt:詩">詩</a> poetry;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A9%A0" class="extiw" title="wikt:詠">詠</a> recite poetry;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BF%B3" class="extiw" title="wikt:俳">俳</a> haiku;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8A%87" class="extiw" title="wikt:劇">劇</a> drama, play;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A5%AD" class="extiw" title="wikt:祭">祭</a> festival;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A0%A1" class="extiw" title="wikt:校">校</a> school;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AD%A6" class="extiw" title="wikt:学">学</a> study, school;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%9F" class="extiw" title="wikt:生">生</a> student;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A1%BE" class="extiw" title="wikt:塾">塾</a> private school;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A7%91" class="extiw" title="wikt:科">科</a> faculty;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%95%99" class="extiw" title="wikt:教">教</a> teach;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A9%B6" class="extiw" title="wikt:究">究</a> study, research;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A0%94" class="extiw" title="wikt:研">研</a> study, research;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9F%A5" class="extiw" title="wikt:知">知</a> know;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%92" class="extiw" title="wikt:卒">卒</a> graduate;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%84%92" class="extiw" title="wikt:儒">儒</a> Confucianism</span>
+</p>
+<h3><span id="Language_.28.E8.AA.9E.29_and_Communication"></span><span class="mw-headline" id="Language_(語)_and_Communication">Language (<a href="https://en.wiktionary.org/wiki/%E8%AA%9E" class="extiw" title="wikt:語">語</a>) and Communication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=52" title="Edit section: Language (語) and Communication">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A8%80" class="extiw" title="wikt:言">言</a> say;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A9%B1" class="extiw" title="wikt:話">話</a> speak;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A3%B0" class="extiw" title="wikt:声">声</a> voice;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%91%8A" class="extiw" title="wikt:告">告</a> tell;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AB%87" class="extiw" title="wikt:談">談</a> discuss;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%81%9E" class="extiw" title="wikt:聞">聞</a> ask;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%95%8F" class="extiw" title="wikt:問">問</a> question;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AD%94" class="extiw" title="wikt:答">答</a> answer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%90%9F" class="extiw" title="wikt:吟">吟</a> recite;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AA%AD" class="extiw" title="wikt:読">読</a> read;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%B8" class="extiw" title="wikt:書">書</a> write;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%AC" class="extiw" title="wikt:本">本</a> book;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%87" class="extiw" title="wikt:文">文</a> text;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%9B%B3" class="extiw" title="wikt:図">図</a> map, diagram;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AD%86" class="extiw" title="wikt:筆">筆</a> writing, brush;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AD%97" class="extiw" title="wikt:字">字</a> character;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BE%9E" class="extiw" title="wikt:辞">辞</a> word;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A9%9E" class="extiw" title="wikt:詞">詞</a> words;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8F%A5" class="extiw" title="wikt:句">句</a> phrase;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A8%98" class="extiw" title="wikt:記">記</a> written record;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%8A" class="extiw" title="wikt:刊">刊</a> publish;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AA%8C" class="extiw" title="wikt:誌">誌</a> document, journal;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A8%83" class="extiw" title="wikt:訃">訃</a> obituary;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BF%A1" class="extiw" title="wikt:信">信</a> message;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A0%B1" class="extiw" title="wikt:報">報</a> inform;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AA%AC" class="extiw" title="wikt:説">説</a> explain;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%A1%8C" class="extiw" title="wikt:題">題</a> topic;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A1%A8" class="extiw" title="wikt:表">表</a> express;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BC%9D" class="extiw" title="wikt:伝">伝</a> transmit;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AB%96" class="extiw" title="wikt:論">論</a> discourse;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%AC%9B" class="extiw" title="wikt:講">講</a> lecture;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%A3" class="extiw" title="wikt:宣">宣</a> proclaim</span>
+</p>
+<h3><span id="Money_.28.E9.8A.AD.29_and_Commerce_.28.E5.95.86.29"></span><span class="mw-headline" id="Money_(銭)_and_Commerce_(商)">Money (<a href="https://en.wiktionary.org/wiki/%E9%8A%AD" class="extiw" title="wikt:銭">銭</a>) and Commerce (<a href="https://en.wiktionary.org/wiki/%E5%95%86" class="extiw" title="wikt:商">商</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=53" title="Edit section: Money (銭) and Commerce (商)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%87%91" class="extiw" title="wikt:金">金</a> gold;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9C%AD" class="extiw" title="wikt:札">札</a> banknote;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%86%86" class="extiw" title="wikt:円">円</a> yen;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%A3" class="extiw" title="wikt:幣">幣</a> currency;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%A1" class="extiw" title="wikt:財">財</a> wealth;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%8C" class="extiw" title="wikt:富">富</a> rich;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%B7" class="extiw" title="wikt:買">買</a> buy;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%BC" class="extiw" title="wikt:購">購</a> purchase;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A3%B2" class="extiw" title="wikt:売">売</a> sell;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%A5%AD" class="extiw" title="wikt:業">業</a> business, industry;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%95%86" class="extiw" title="wikt:商">商</a> / <a href="https://en.wiktionary.org/wiki/%E8%B2%BF" class="extiw" title="wikt:貿">貿</a> trade;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%A9" class="extiw" title="wikt:販">販</a> marketing;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%8D%B8" class="extiw" title="wikt:卸">卸</a> wholesale;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%89%95" class="extiw" title="wikt:払">払</a> pay;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%9D" class="extiw" title="wikt:貝">貝</a> cowry (<a href="/wiki/History_of_Chinese_currency#Ancient_currencies" title="History of Chinese currency">ancient Chinese currency</a>);</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%A8" class="extiw" title="wikt:貨">貨</a> goods or property;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%9D" class="extiw" title="wikt:宝">宝</a> treasure or wealth;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%A3" class="extiw" title="wikt:産">産</a> product;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%A5" class="extiw" title="wikt:工">工</a> manufacture;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BE%A1" class="extiw" title="wikt:価">価</a> / <a href="https://en.wiktionary.org/wiki/%E5%80%A4" class="extiw" title="wikt:値">値</a> price;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AB%98" class="extiw" title="wikt:高">高</a> expensive;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%89" class="extiw" title="wikt:安">安</a> / <a href="https://en.wiktionary.org/wiki/%E5%BB%89" class="extiw" title="wikt:廉">廉</a> cheap;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%87" class="extiw" title="wikt:資">資</a> capital;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%83" class="extiw" title="wikt:賃">賃</a> fee or wages;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%99" class="extiw" title="wikt:料">料</a> fee;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%BB" class="extiw" title="wikt:費">費</a> expense;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%96%B6" class="extiw" title="wikt:営">営</a> management;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%81%B7" class="extiw" title="wikt:職">職</a> employment;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%83%8D" class="extiw" title="wikt:働">働</a> work;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A8%BC" class="extiw" title="wikt:稼">稼</a> work, earn;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%B5%A6" class="extiw" title="wikt:給">給</a> / <a href="https://en.wiktionary.org/wiki/%E4%BF%B8" class="extiw" title="wikt:俸">俸</a> salary;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%84%9F" class="extiw" title="wikt:償">償</a> recompense;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%82%B5" class="extiw" title="wikt:債">債</a> bond or debt;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B2%AF" class="extiw" title="wikt:貯">貯</a> savings;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A8%8E" class="extiw" title="wikt:税">税</a> / <a href="https://en.wiktionary.org/wiki/%E7%A7%9F" class="extiw" title="wikt:租">租</a> tax;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%A6" class="extiw" title="wikt:賦">賦</a> installment or levy;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%84" class="extiw" title="wikt:賄">賄</a> / <a href="https://en.wiktionary.org/wiki/%E8%B3%82" class="extiw" title="wikt:賂">賂</a> bribe;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%B3%AD" class="extiw" title="wikt:賭">賭</a> gamble</span>
+</p>
+<h3><span id="Religion_.28.E5.AE.97.29_and_the_Supernatural_World"></span><span class="mw-headline" id="Religion_(宗)_and_the_Supernatural_World">Religion (<a href="https://en.wiktionary.org/wiki/%E5%AE%97" class="extiw" title="wikt:宗">宗</a>) and the Supernatural World</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=54" title="Edit section: Religion (宗) and the Supernatural World">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BF%8E" class="extiw" title="wikt:俎">俎</a> altar of sacrifice</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BB%8F" class="extiw" title="wikt:仏">仏</a> Buddha</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%BC" class="extiw" title="wikt:尼">尼</a> Buddhist nun</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%83%A7" class="extiw" title="wikt:僧">僧</a> Buddhist monk or priest</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AF%BA" class="extiw" title="wikt:寺">寺</a> Buddhist temple</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%BD" class="extiw" title="wikt:幽">幽</a> dark or hidden</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AD%94" class="extiw" title="wikt:魔">魔</a> demon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%95%99" class="extiw" title="wikt:教">教</a> doctrine or teaching</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%AB%9C" class="extiw" title="wikt:竜">竜</a> dragon</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AC%BC" class="extiw" title="wikt:鬼">鬼</a> evil spirit or <a href="/wiki/Oni" title="Oni">oni</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A5%93" class="extiw" title="wikt:祓">祓</a> exorcism or purity</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%A6%96" class="extiw" title="wikt:妖">妖</a> goblin or <a href="/wiki/Y%C5%8Dkai" title="Yōkai">yōkai</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A5%9E" class="extiw" title="wikt:神">神</a> god or [kami]</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BB%99" class="extiw" title="wikt:仙">仙</a> immortal or sage</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B9%BB" class="extiw" title="wikt:幻">幻</a> phantom</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A5%88" class="extiw" title="wikt:祈">祈</a> pray</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%B4%BE" class="extiw" title="wikt:派">派</a> religious sect</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%81%96" class="extiw" title="wikt:聖">聖</a> sacred</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8A%A0" class="extiw" title="wikt:犠">犠</a> sacrifice</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B7%AB" class="extiw" title="wikt:巫">巫</a> shaman</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A4%BE" class="extiw" title="wikt:社">社</a> <a href="/wiki/Shinto_shrine" title="Shinto shrine">Shinto shrine</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%AE%AE" class="extiw" title="wikt:宮">宮</a> shrine</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%BD%AA" class="extiw" title="wikt:罪">罪</a> sin or taboo</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%AD%82" class="extiw" title="wikt:魂">魂</a> soul</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9C%8A" class="extiw" title="wikt:霊">霊</a> spirit</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%B9" class="extiw" title="wikt:刹">刹</a> temple</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A9%A3" class="extiw" title="wikt:詣">詣</a> temple visit</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%B7" class="extiw" title="wikt:德">德</a> virtue</span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%99%BD" class="extiw" title="wikt:陽">陽</a> <a href="/wiki/Yin_and_yang" title="Yin and yang">Yang principle</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%99%B0" class="extiw" title="wikt:陰">陰</a> <a href="/wiki/Yin_and_yang" title="Yin and yang">Yin principle</a></span>;
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A6%85" class="extiw" title="wikt:禅">禅</a> Zen</span>.
+</p>
+<h4><span class="mw-headline" id="Signs_of_the_Zodiac"><a href="/wiki/Chinese_Zodiac" class="mw-redirect" title="Chinese Zodiac">Signs of the Zodiac</a></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=55" title="Edit section: Signs of the Zodiac">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><i>The four trines of the Chinese-Japanese horoscope:</i> <br />
+<b>A.</b> 01. 鼠 (子) <a href="/wiki/Rat_(zodiac)" title="Rat (zodiac)">Rat</a> - 05. 龍  (辰) <a href="/wiki/Dragon_(zodiac)" title="Dragon (zodiac)">Dragon</a> - 09. 猴  (申) <a href="/wiki/Monkey_(zodiac)" title="Monkey (zodiac)">Monkey</a>; <br />
+<b>B.</b> 02. 牛  (丑) <a href="/wiki/Ox_(zodiac)" title="Ox (zodiac)">Ox</a> - 06. 蛇  (巳) <a href="/wiki/Snake_(zodiac)" title="Snake (zodiac)">Snake</a> - 10. 雞 / 鷄  (酉) <a href="/wiki/Rooster_(zodiac)" title="Rooster (zodiac)">Rooster</a>; <br />
+<b>C.</b> 03. 虎  (寅) <a href="/wiki/Tiger_(zodiac)" title="Tiger (zodiac)">Tiger</a> - 07. 馬  (午) <a href="/wiki/Horse_(zodiac)" title="Horse (zodiac)">Horse</a> - 11. 狗  (戌) <a href="/wiki/Dog_(zodiac)" title="Dog (zodiac)">Dog</a>; <br />
+<b>D.</b> 04. 兔  (卯) <a href="/wiki/Rabbit_(zodiac)" title="Rabbit (zodiac)">Rabbit</a> - 08. 羊  (未) <a href="/wiki/Goat_(zodiac)" title="Goat (zodiac)">Goat</a> - 12. 豬  (亥) <i>China:</i> <a href="/wiki/Pig_(zodiac)" title="Pig (zodiac)">Pig</a> <i>Japan:</i> <a href="/wiki/Pig_(zodiac)" title="Pig (zodiac)">Boar</a> <br />
+<i>Note that in Japan the new sign of zodiac starts on January 1, while in China it starts, according to the traditional Chinese lunar calendar, at the new moon that falls between January 21 and February 20, so that persons born in January or February may have two different signs in the two countries.</i>
+</p>
+<h3><span id="War_.28.E6.88.A6.29"></span><span class="mw-headline" id="War_(戦)">War (<a href="https://en.wiktionary.org/wiki/%E6%88%A6" class="extiw" title="wikt:戦">戦</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=56" title="Edit section: War (戦)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AD%A6" class="extiw" title="wikt:武">武</a> military;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%88%A6" class="extiw" title="wikt:戦">戦</a> / <a href="https://en.wiktionary.org/wiki/%E9%97%98" class="extiw" title="wikt:闘">闘</a> battle;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%95%B5" class="extiw" title="wikt:敵">敵</a> enemy;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%94%BB" class="extiw" title="wikt:攻">攻</a> attack;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%AC" class="extiw" title="wikt:斬">斬</a> slash;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BC%90" class="extiw" title="wikt:伐">伐</a> attack or punish;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AE%BA" class="extiw" title="wikt:殺">殺</a> kill;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%92%83" class="extiw" title="wikt:撃">撃</a> / <a href="https://en.wiktionary.org/wiki/%E8%A8%8E" class="extiw" title="wikt:討">討</a> attack;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%AE%B4" class="extiw" title="wikt:殴">殴</a> beat, assault;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%92%83" class="extiw" title="wikt:撃">撃</a> beat, attack;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%96%AC" class="extiw" title="wikt:斬">斬</a> cut with a sword;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%84" class="extiw" title="wikt:射">射</a> shoot at;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%A5%B2" class="extiw" title="wikt:襲">襲</a> raid;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BE%81" class="extiw" title="wikt:征">征</a> conquer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%99%A3" class="extiw" title="wikt:陣">陣</a> battle formation, camp;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B1%AF" class="extiw" title="wikt:屯">屯</a> barracks;</span> 
+</p>
+<h4><span id="Soldier_.28.E5.85.B5.29"></span><span class="mw-headline" id="Soldier_(兵)">Soldier (<a href="https://en.wiktionary.org/wiki/%E5%85%B5" class="extiw" title="wikt:兵">兵</a>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=57" title="Edit section: Soldier (兵)">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E4%BE%8D" class="extiw" title="wikt:侍">侍</a> <a href="/wiki/Samurai" title="Samurai">Samurai</a>;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BF%8D" class="extiw" title="wikt:忍">忍</a> <a href="/wiki/Ninja" title="Ninja">Ninja or Shinobi</a>;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%81%B5" class="extiw" title="wikt:偵">偵</a> spy;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%86" class="extiw" title="wikt:将">将</a> commander;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%9B%B9" class="extiw" title="wikt:曹">曹</a> sergeant;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%B0%89" class="extiw" title="wikt:尉">尉</a> military officer;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%BB%8D" class="extiw" title="wikt:軍">軍</a> troops;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%9A%8A" class="extiw" title="wikt:隊">隊</a> corps;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%8F%AD" class="extiw" title="wikt:班">班</a> squad, corps;</span>
+</p>
+<h4><span class="mw-headline" id="Weapons">Weapons</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=List_of_kanji_by_concept&amp;action=edit&amp;section=58" title="Edit section: Weapons">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%88%80" class="extiw" title="wikt:刀">刀</a> sword or <a href="/wiki/Katana" title="Katana">katana</a>;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9F%9B" class="extiw" title="wikt:矛">矛</a> <a href="/wiki/Halberd" title="Halberd">halberd</a>;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E6%88%88" class="extiw" title="wikt:戈">戈</a> spear;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%89%A3" class="extiw" title="wikt:剣">剣</a> sword;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9B%BE" class="extiw" title="wikt:盾">盾</a> shield;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%94%B2" class="extiw" title="wikt:甲">甲</a> armour;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%93" class="extiw" title="wikt:弓">弓</a> bow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%9F%A2" class="extiw" title="wikt:矢">矢</a> arrow;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E9%8A%83" class="extiw" title="wikt:銃">銃</a> gun;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%A0%B2" class="extiw" title="wikt:砲">砲</a> gun or cannon;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E7%88%86" class="extiw" title="wikt:爆">爆</a> bomb;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E5%BC%BE" class="extiw" title="wikt:弾">弾</a> bullet;</span> 
+<span class="nowrap"><a href="https://en.wiktionary.org/wiki/%E8%89%A6" class="extiw" title="wikt:艦">艦</a> warship;</span>
+
+
+</div> <!-- end KanjiConceptsPanel -->
+
+</div> <!-- end TabContainer -->
 
 <iframe src="https://www.google.com/search?igu=1&q=translate" width="100%" height="25%"></iframe>
+
 
