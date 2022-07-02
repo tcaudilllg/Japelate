@@ -3,7 +3,7 @@ Web app for entering Japanese characters into Google Translate
 
 # Usage
 
-Click any japanese character on the page and it will appear in the box at top. Copy that text into Google Translate box at bottom.
+Click any Japanese character on the page and it will appear in the box at top. Copy that text into Google Translate box at bottom.
 
 This app assumes that the vast majority of non-Japanese people who want to read Japanese will never master the language even at a novice level. To that end, characters are organized based on their similarity to Roman characters. This makes it easier to recognize a character seen in print or a game, for instance, from the list.
 
