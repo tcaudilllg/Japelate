@@ -6,6 +6,6 @@ This app assumes that the vast majority of non-Japanese people who want to read 
 
 Unfortunately Google is strict about access to their online tools. A programmer can't pre-select Japanese from the menu by URL... hence you the user will need to select it yourself. It is also programmatically impossible to directly copy phrases built from selected characters into Google Translate itself (browser won't allow due to questionable security concerns)... that copy-paste job will be up to you I'm afraid.
 
-The current version only supports kana. Later versions will support hiragana and commonly used Kanji.
+The current version supports kana and common kanji. Next version will support hiragana.
 
 I may introduce a version packaged in Electron or NW.js which has fewer limitations... if there is enough demand.
